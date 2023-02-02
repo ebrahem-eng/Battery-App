@@ -6,6 +6,12 @@
 
                 <div class="card">
                     <div class="card-body">
+                      @if(session("error_message"))
+                      <div class="alert alert-danger alert-dismissible bg-danger text-white border-0 fade show" id="error-alert" role="alert">
+                          {{session("error_message")}}
+                      </div>
+                      {{header("refresh : 2")}}
+                      @endif
                         <h5 class="card-title ">الرجاء اختيار الاحمال:</h5>
                        
                         <form class="justify-content-center" action="{{route('calculate.watt')}}" method="post">
@@ -28,4 +34,3 @@
         </div>
     </section>
 </main>
-

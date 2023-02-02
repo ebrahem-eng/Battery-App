@@ -19,17 +19,23 @@ class UserController extends Controller
     public function Calculate_Sum_Watting(Request $request)
     {
 
-        $selected = $request->input('selected');
-        $values = $request->input('value');
-        $sum = 0;
-    
-        foreach ($selected as $id => $isSelected) {
-            if ($isSelected) {
-                $sum += $values[$id];
+        try{
+            $selected = $request->input('selected');
+            $values = $request->input('value');
+            $sum = 0;
+        
+            foreach ($selected as $id => $isSelected) {
+                if ($isSelected) {
+                    $sum += $values[$id];
+                }
             }
-        }
-      
+          
         return view('User/Time', compact('sum'));
+        }catch(\Exception $ex)
+        {
+            return redirect()->back()->with('error_message','خطا ما الرجاءاعادة المحاولة');
+        }
+        
     }
 
     public function Calculate_watt_time(Request $request)
@@ -38,7 +44,7 @@ class UserController extends Controller
         $sum_watt = $request->input('total-watt');
         $time = $request->input('time');
         $watt_time = $sum_watt*$time;
-      //  dd($sum_watt,$time,$watt_time);
+   
         return view('User/All_load', compact('watt_time'));
 
     }

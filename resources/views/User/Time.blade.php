@@ -13,7 +13,7 @@
                                 <label for="validationDefault01" class="form-label">مجموع الاحمال:</label>
                                 <input type="number" class="form-group" name="total-watt" value="{{$sum}}" readonly>
                                 <label for="validationDefault01" class="form-label">الوقت المقدر للتشغيل:</label>
-                                <input type="number" class="form-group" name="time" placeholder="1 - 10">
+                                <input type="number" class="form-group" name="time" placeholder="1 - 10" required>
                             </div>
                     </div>
                     <div class="col-12 d-flex justify-content-center">
