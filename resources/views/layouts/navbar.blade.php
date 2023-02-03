@@ -76,7 +76,7 @@
     <aside id="sidebar" class="sidebar" dir="rtl">
         <ul class="sidebar-nav" id="sidebar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('dashboard') }}">
+                <a class="nav-link" href="{{url('/')}}">
                     <i class="bi bi-house-door"></i>
                     <span>الرئيسية</span>
                 </a>

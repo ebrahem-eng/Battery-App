@@ -5,16 +5,16 @@
             <div class="col-lg-7 m-auto">
 
                 <div class="card">
+                    @if(session("error_message"))
+                    <div class="alert alert-danger alert-dismissible bg-danger text-white border-0 fade show" id="error-alert" role="alert">
+                        {{session("error_message")}}
+                    </div>
+                    {{header("refresh : 2")}}
+                    @endif
                     <div class="card-body">
-                      @if(session("error_message"))
-                      <div class="alert alert-danger alert-dismissible bg-danger text-white border-0 fade show" id="error-alert" role="alert">
-                          {{session("error_message")}}
-                      </div>
-                      {{header("refresh : 2")}}
-                      @endif
                         <h5 class="card-title ">الرجاء اختيار الاحمال:</h5>
                        
-                        <form class="justify-content-center" action="{{route('calculate.watt')}}" method="post">
+                        <form class="justify-content-center" action="{{route('calculate.watt')}}" method="get">
                           @csrf
                           @foreach ($loads as $load)
                               <div class="col-md-4">
@@ -29,7 +29,6 @@
                       </form>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>

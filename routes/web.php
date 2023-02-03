@@ -29,7 +29,7 @@ Route::get('/admin', function () {
 })->middleware(['auth', 'verified', 'role:Admin'])->name('admin.index');
 
 Route::get('/', [UserController::class, 'Show_load_watt'])->name('show.load');
-Route::post('/user/calculate/watt/sum', [UserController::class, 'Calculate_Sum_Watting'])->name('calculate.watt');
+Route::get('/user/calculate/watt/sum', [UserController::class, 'Calculate_Sum_Watting'])->name('calculate.watt');
 Route::get('/user/calculate/watt/time', [UserController::class, 'Calculate_watt_time'])->name('calculate.watt.time');
 
 
