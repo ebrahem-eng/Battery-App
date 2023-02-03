@@ -20,7 +20,7 @@ return new class extends Migration
             $table->integer('number_inverters');
             $table->integer('watt_battery');
             $table->integer('watt_inverters');
-            $table->integer('Number_hours_for_charge');
+            $table->string('Number_hours_for_charge');
             $table->string('details');
             $table->softDeletes();
             $table->timestamps();
