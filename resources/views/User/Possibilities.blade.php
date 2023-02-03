@@ -11,11 +11,9 @@
                         <label for="validationDefault01" class="form-label">1-تركيب منظومة واحدة من المنظومة الاولى</label>
                         <br>
                         <label for="validationDefault01" class="form-label">2-تركيب منظومة واحدة من المنظومة الثانية</label> 
-                        <form>
                             <div class="col-12 d-flex justify-content-center">
-                            <button class="btn btn-primary " type="submit">اظهار تفاصيل المنظومات المذكورة اعلاه</button>
-                            </div>    
-                        </form>     
+                            <a class="btn btn-primary " type="button" href="{{route('one_table.system')}}">اظهار تفاصيل المنظومات المذكورة اعلاه</a>
+                            </div>      
                     </div>
                     @endif
                 </div>

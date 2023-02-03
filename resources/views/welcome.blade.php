@@ -25,6 +25,7 @@
                                     <input type="number" class="form-group" name="value[{{ $load->id }}]"
                                         value="{{ $load->value }}">
                                 </div>
+                                <br>
                             @endforeach
                             <div class="col-12 d-flex justify-content-center">
                                 <button class="btn btn-primary " type="submit">حساب</button>

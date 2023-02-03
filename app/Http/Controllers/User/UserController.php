@@ -4,6 +4,7 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use App\Models\Loads;
+use App\Models\System;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -57,16 +58,27 @@ class UserController extends Controller
 
     public function show_page_possibilities()
     {
- 
+
         return view('User/Possibilities');
     }
 
     public function show_possibilities(Request $request)
     {
         $Total_load = $request->input('total-watt');
-        if($Total_load > 0 && $Total_load <=4000)
-        {
-            return redirect()->route('show.page.possibilities')->with('one_Possibilities','success');
+        if ($Total_load > 0 && $Total_load <= 4000) {
+            return redirect()->route('show.page.possibilities')->with('one_Possibilities', 'success');
         }
+    }
+
+    public function show_page_table_system()
+    {
+        return view('User/System_Table');
+    }
+
+
+    public function one_table_system()
+    {
+        $one_table_system = System::whereIn('id', [1, 2])->get();
+        return redirect()->route('show.page.table.system')->with(['one_table_systems' => $one_table_system, 'one_table_system' => 'success']);
     }
 }
