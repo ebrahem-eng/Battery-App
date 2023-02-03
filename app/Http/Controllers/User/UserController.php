@@ -53,4 +53,20 @@ class UserController extends Controller
             return redirect()->back()->with("error_message", 'خطا ما الرجاءاعادة المحاولة');
         }
     }
+
+
+    public function show_page_possibilities()
+    {
+ 
+        return view('User/Possibilities');
+    }
+
+    public function show_possibilities(Request $request)
+    {
+        $Total_load = $request->input('total-watt');
+        if($Total_load > 0 && $Total_load <=4000)
+        {
+            return redirect()->route('show.page.possibilities')->with('one_Possibilities','success');
+        }
+    }
 }

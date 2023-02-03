@@ -31,7 +31,8 @@ Route::get('/admin', function () {
 Route::get('/', [UserController::class, 'Show_load_watt'])->name('show.load');
 Route::get('/user/calculate/watt/sum', [UserController::class, 'Calculate_Sum_Watting'])->name('calculate.watt');
 Route::get('/user/calculate/watt/time', [UserController::class, 'Calculate_watt_time'])->name('calculate.watt.time');
-
+Route::get('/user/show/possibilities', [UserController::class, 'show_page_possibilities'])->name('show.page.possibilities');
+Route::get('/user/possibilities', [UserController::class, 'show_possibilities'])->name('show.possibilities');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
