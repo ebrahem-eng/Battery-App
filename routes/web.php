@@ -15,9 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('user.index');
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -28,14 +26,19 @@ Route::get('/admin', function () {
     return view('Admin/index');
 })->middleware(['auth', 'verified', 'role:Admin'])->name('admin.index');
 
+//<=================== user section ================>
+Route::get('/', function () {return view('welcome');})->name('user.index');
 Route::get('/', [UserController::class, 'Show_load_watt'])->name('show.load');
 Route::get('/user/calculate/watt/sum', [UserController::class, 'Calculate_Sum_Watting'])->name('calculate.watt');
 Route::get('/user/calculate/watt/time', [UserController::class, 'Calculate_watt_time'])->name('calculate.watt.time');
 Route::get('/user/show/possibilities', [UserController::class, 'show_page_possibilities'])->name('show.page.possibilities');
 Route::get('/user/show/TableSystem', [UserController::class, 'show_page_table_system'])->name('show.page.table.system');
 Route::get('/user/possibilities', [UserController::class, 'show_possibilities'])->name('show.possibilities');
-Route::get('/user/TableSystem', [UserController::class, 'one_table_system'])->name('one_table.system');
+Route::get('/user/one/TableSystem', [UserController::class, 'one_table_system'])->name('one_table.system');
+Route::get('/user/two/TableSystem', [UserController::class, 'two_table_system'])->name('two_table.system');
+Route::get('/user/three/TableSystem', [UserController::class, 'three_table_system'])->name('three_table.system');
 
+//<================== end user section ===============>
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
