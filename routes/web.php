@@ -38,6 +38,8 @@ Route::get('/user/possibilities', [UserController::class, 'show_possibilities'])
 Route::get('/user/one/TableSystem', [UserController::class, 'one_table_system'])->name('one_table.system');
 Route::get('/user/two/TableSystem', [UserController::class, 'two_table_system'])->name('two_table.system');
 Route::get('/user/three/TableSystem', [UserController::class, 'three_table_system'])->name('three_table.system');
+Route::get('/user/fourth/TableSystem', [UserController::class, 'fourth_table_system'])->name('fourth_table.system');
+Route::get('/user/five/TableSystem', [UserController::class, 'five_table_system'])->name('five_table.system');
 //<================== end user section ===============>
 
 

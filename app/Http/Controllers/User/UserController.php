@@ -78,11 +78,22 @@ class UserController extends Controller
         if ($Total_load > 0 && $Total_load <= 4000) {
 
             return redirect()->route('show.page.possibilities')->with('one_Possibilities', 'success');
-        } elseif ($Total_load > 4000 && $Total_load <= 8000) {
+        } 
+        elseif ($Total_load > 4000 && $Total_load <= 8000) {
 
             return redirect()->route('show.page.possibilities')->with('two_Possibilities', 'success');
-        } elseif ($Total_load > 8000 && $Total_load <= 12000) {
+        }
+         elseif ($Total_load > 8000 && $Total_load <= 12000) {
+
             return redirect()->route('show.page.possibilities')->with('three_Possibilities', 'success');
+        }
+        elseif ($Total_load > 12000 && $Total_load <= 16000)
+        {
+            return redirect()->route('show.page.possibilities')->with('fourth_Possibilities', 'success');
+        }
+        elseif ($Total_load > 16000 && $Total_load <= 20000)
+        {
+            return redirect()->route('show.page.possibilities')->with('five_Possibilities', 'success');
         }
     }
 
@@ -116,4 +127,19 @@ class UserController extends Controller
         $three_table_system = System::all();
         return redirect()->route('show.page.table.system')->with(['three_table_systems' => $three_table_system, 'three_table_system' => 'success']);
     }
+        //اظهار جدول المنظومات المناسبة للاحتمال الرابع
+
+        public function fourth_table_system()
+        {
+            $fourth_table_system = System::all();
+            return redirect()->route('show.page.table.system')->with(['fourth_table_systems' => $fourth_table_system, 'fourth_table_system' => 'success']);
+        }
+
+           //اظهار جدول المنظومات المناسبة للاحتمال الخامس
+
+           public function five_table_system()
+           {
+               $five_table_system = System::all();
+               return redirect()->route('show.page.table.system')->with(['five_table_systems' => $five_table_system, 'five_table_system' => 'success']);
+           }
 }
