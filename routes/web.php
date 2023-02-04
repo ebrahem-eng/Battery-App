@@ -26,6 +26,7 @@ Route::get('/admin', function () {
     return view('Admin/index');
 })->middleware(['auth', 'verified', 'role:Admin'])->name('admin.index');
 
+
 //<=================== user section ================>
 Route::get('/', function () {return view('welcome');})->name('user.index');
 Route::get('/', [UserController::class, 'Show_load_watt'])->name('show.load');
@@ -37,8 +38,9 @@ Route::get('/user/possibilities', [UserController::class, 'show_possibilities'])
 Route::get('/user/one/TableSystem', [UserController::class, 'one_table_system'])->name('one_table.system');
 Route::get('/user/two/TableSystem', [UserController::class, 'two_table_system'])->name('two_table.system');
 Route::get('/user/three/TableSystem', [UserController::class, 'three_table_system'])->name('three_table.system');
-
 //<================== end user section ===============>
+
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

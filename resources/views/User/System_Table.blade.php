@@ -2,7 +2,7 @@
 <main id="main" class="main" dir="rtl">
     <section>
         <div class="row">
-            <div class="col-lg-7 m-auto">
+            <div class="col-lg-12">
 
                 <div class="card">
                     <!-- one table system -->
