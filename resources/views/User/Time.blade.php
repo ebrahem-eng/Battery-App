@@ -29,6 +29,14 @@
                         </div>
                         {{ header('refresh : 2') }}
                     @endif
+
+                    @if (session('error_max_watt_message'))
+                        <div class="alert alert-danger alert-dismissible bg-danger text-white border-0 fade show"
+                            id="error-alert" role="alert">
+                            {{ session('error_max_watt_message') }}
+                        </div>
+                        {{ header('refresh : 2') }}
+                    @endif
                     <!-- ========== end error message  ========-->
 
                     <div class="card-body">
@@ -37,18 +45,22 @@
                             @csrf
                             <div class="col-md-4">
                                 <label for="validationDefault01" class="form-label">مجموع الاحمال:</label>
+                                <br>
                                 <input type="number" class="form-group" name="total-watt" value="{{ $sum }}"
                                     readonly>
+                                <br>
                                 <label for="validationDefault01" class="form-label">الوقت المقدر للتشغيل:</label>
-                                <input type="number" class="form-group" name="time" placeholder="1 - 10" required>
+                                <br>
+                                <input type="number" class="form-group" name="time" placeholder="1 - 8" required
+                                    min="1" max="8.0000000000000000">
                             </div>
                     </div>
                     <div class="col-12 d-flex justify-content-center">
-                        <button class="btn btn-primary" type="submit">حساب</button>
+                        <button class="btn btn-primary mb-3" type="submit">حساب</button>
                     </div>
-                    <div class="col-12 d-flex justify-content-center mt-2 ">
+                    {{-- <div class="col-12 d-flex justify-content-center mt-2 ">
                         <a class="btn btn-primary " type="button" href="{{ url('/') }}">رجوع</a>
-                    </div>
+                    </div> --}}
 
                     </form>
 

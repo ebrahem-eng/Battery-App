@@ -17,9 +17,9 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth', 'verified','role:Admin'])->name('dashboard');
 
 
 Route::get('/admin', function () {
@@ -28,7 +28,7 @@ Route::get('/admin', function () {
 
 
 //<=================== user section ================>
-Route::get('/', function () {return view('welcome');})->name('user.index');
+//Route::get('/', function () {return view('welcome');})->name('user.index');
 Route::get('/', [UserController::class, 'Show_load_watt'])->name('show.load');
 Route::get('/user/calculate/watt/sum', [UserController::class, 'Calculate_Sum_Watting'])->name('calculate.watt');
 Route::get('/user/calculate/watt/time', [UserController::class, 'Calculate_watt_time'])->name('calculate.watt.time');
@@ -40,6 +40,7 @@ Route::get('/user/two/TableSystem', [UserController::class, 'two_table_system'])
 Route::get('/user/three/TableSystem', [UserController::class, 'three_table_system'])->name('three_table.system');
 Route::get('/user/fourth/TableSystem', [UserController::class, 'fourth_table_system'])->name('fourth_table.system');
 Route::get('/user/five/TableSystem', [UserController::class, 'five_table_system'])->name('five_table.system');
+Route::get('/user/six/TableSystem', [UserController::class, 'six_table_system'])->name('six_table.system');
 //<================== end user section ===============>
 
 
