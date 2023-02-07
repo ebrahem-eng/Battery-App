@@ -17,15 +17,12 @@ use Illuminate\Support\Facades\Route;
 
 
 
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth', 'verified','role:Admin'])->name('dashboard');
 
-
+//<================== admin section ===============>
 Route::get('/admin', function () {
     return view('Admin/index');
 })->middleware(['auth', 'verified', 'role:Admin'])->name('admin.index');
-
+//<================== end admin section ============>
 
 //<=================== user section ================>
 //Route::get('/', function () {return view('welcome');})->name('user.index');

@@ -1,4 +1,4 @@
-@extends('layouts.navbar')
+@extends('layouts.userSidebar')
 <main id="main" class="main" dir="rtl">
     <section>
         <div class="row">
