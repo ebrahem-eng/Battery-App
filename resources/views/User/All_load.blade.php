@@ -1,4 +1,5 @@
 @extends('layouts.userSidebar')
+@section('title','الاحمال النهائية')
 <main id="main" class="main" dir="rtl">
     <section>
         <div class="row">

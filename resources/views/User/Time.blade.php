@@ -1,4 +1,5 @@
 @extends('layouts.userSidebar')
+@section('title','اختيار ساعات التشغيل')
 <main id="main" class="main" dir="rtl">
     <section>
         <div class="row">

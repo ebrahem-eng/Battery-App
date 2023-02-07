@@ -1,4 +1,5 @@
 @extends('layouts.userSidebar')
+@section('title','جدول المنظومات المناسبة')
 <main id="main" class="main" dir="rtl">
     <section class="section">
         <div class="row">
