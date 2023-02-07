@@ -5,12 +5,9 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
-    <title>Battery</title>
+    <title>@yield('title')</title>
     <meta content="" name="description" />
     <meta content="" name="keywords" />
-
-
-
     <!-- Google Fonts -->
     <link href="https://fonts.gstatic.com" rel="preconnect" />
     <link
@@ -30,53 +27,12 @@
 </head>
 
 <body>
-    <!-- ======= Header ======= -->
-    <header id="header" class="header fixed-top d-flex align-items-center justify-content-between">
-        <nav class="header-nav">
-            <ul class="d-flex align-items-center">
-
-
-                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
-                    <li class="dropdown-header">
-
-
-                    </li>
-                    <li>
-                        <hr class="dropdown-divider" />
-                    </li>
-
-                    <li class="notification-item">
-                        <i class="bi bi-exclamation-circle text-warning"></i>
-                        <div>
-
-                        </div>
-                    </li>
-
-                    <li>
-                        <hr class="dropdown-divider" />
-                    </li>
-                </ul>
-                <!-- End Notification Dropdown Items -->
-                </li>
-                <!-- End Notification Nav -->
-        </nav>
-        <!-- End Icons Navigation -->
-        <div class="d-flex align-items-center justify-content-between me-3">
-            <a href="#" class="logo d-flex align-items-center justify-content-end">
-                <h1 class="spu"></h1>
-                <img src="" alt="" />
-            </a>
-            <i class="bi bi-list toggle-sidebar-btn"></i>
-        </div>
-        <!-- End Logo -->
-    </header>
-    <!-- End Header -->
 
     <!-- ======= Sidebar ======= -->
     <aside id="sidebar" class="sidebar" dir="rtl">
         <ul class="sidebar-nav" id="sidebar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="{{ url('/') }}">
+                <a class="nav-link" href="{{ route('admin.index') }}">
                     <i class="bi bi-house-door"></i>
                     <span>الرئيسية</span>
                 </a>
@@ -85,16 +41,16 @@
 
             <li class="nav-item">
                 <a class="nav-link collapsed" href="">
-                    <i class="bi bi-question-circle"></i>
-                    <span>من نحن</span>
+                    <i class="bi bi-clock"></i>
+                    <span>ادارة الاحمال</span>
                 </a>
             </li>
             <!-- End Icons Nav -->
 
             <li class="nav-item">
                 <a class="nav-link collapsed" href="">
-                    <i class="bi bi-telephone"></i>
-                    <span>تواصل معنا</span>
+                    <i class="bi bi-lightning-charge-fill"></i>
+                    <span>ادارة المنظومات</span>
                 </a>
             </li>
             <!-- End Icons Nav -->

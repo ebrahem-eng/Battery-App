@@ -10,7 +10,7 @@
 
                 <div class="card">
 
-                     <!-- error message  -->
+                    <!-- error message  -->
                     @if (session('error_message'))
                         <div class="alert alert-danger alert-dismissible bg-danger text-white border-0 fade show"
                             id="error-alert" role="alert">
@@ -37,7 +37,7 @@
                                 <br>
                             @endforeach
                             <div class="col-12 d-flex justify-content-center">
-                                <button class="btn btn-primary " type="submit">حساب</button>
+                                <button class="btn btn-primary" type="submit">حساب</button>
                             </div>
                         </form>
                     </div>

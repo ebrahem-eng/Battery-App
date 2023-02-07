@@ -1,1 +1,2 @@
-    <h1>welocme in my app</h1>
+@extends('Admin.empty')
+@section('title','الصفحة الرئيسية')
