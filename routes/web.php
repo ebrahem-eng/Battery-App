@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\Loads\LoadsController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\User\UserController;
 use Illuminate\Support\Facades\Route;
@@ -15,16 +17,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
-
-
 //<================== admin section ===============>
-Route::get('/admin', function () {
-    return view('Admin/index');
-})->middleware(['auth', 'verified', 'role:Admin'])->name('admin.index');
+Route::middleware(['auth', 'verified', 'role:Admin'])->prefix('admin')->group(function () {
+ Route::get('/',[AdminController::class , 'index'])->name('admin.index');
+ Route::get('/loads/show',[LoadsController::class ,'index'])->name('admin.show.loads');
+ Route::get('/loads/create',[LoadsController::class ,'create'])->name('admin.create.loads');
+ Route::post('/loads/store',[LoadsController::class ,'store'])->name('admin.store.loads');
+ Route::get('/loads/archive',[LoadsController::class , 'archive'])->name('admin.archive.loads');
+ Route::delete('/loads/soft/delete/{loads}',[LoadsController::class ,'destroy'])->name('admin.softdelete.loads');
+ Route::delete('/loads/force/delete/{id}',[LoadsController::class ,'force_delete'])->name('admin.forcedelete.loads');
+ Route::get('/loads/restore/{id}',[LoadsController::class ,'restore'])->name('admin.restore.loads');
+
+});
 //<================== end admin section ============>
 
 //<=================== user section ================>
+
 //Route::get('/', function () {return view('welcome');})->name('user.index');
 Route::get('/', [UserController::class, 'Show_load_watt'])->name('show.load');
 Route::get('/user/calculate/watt/sum', [UserController::class, 'Calculate_Sum_Watting'])->name('calculate.watt');

@@ -40,11 +40,36 @@
             <!-- End Dashboard Nav -->
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="">
-                    <i class="bi bi-clock"></i>
-                    <span>ادارة الاحمال</span>
+                <a
+                  class="nav-link collapsed"
+                  data-bs-target="#components-nav"
+                  data-bs-toggle="collapse"
+                  href="#"
+                >
+                <i class="bi bi-clock-fill"></i></i><span>ادارة الاحمال</span
+                  >
+                <i class="bi bi-chevron-down ms-auto"></i>
                 </a>
-            </li>
+                <ul
+                  id="components-nav"
+                  class="nav-content collapse"
+                  data-bs-parent="#sidebar-nav"
+                >
+                 
+                  <li>
+                    <a href="{{route('admin.show.loads')}}">
+                      <i class="bi bi-circle"></i><span>استعراض الاحمال</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="{{route('admin.archive.loads')}}">
+                      <i class="bi bi-circle"></i><span>ارشيف الاحمال</span>
+                    </a>
+                  </li>
+           
+                </ul>
+              </li>
+      
             <!-- End Icons Nav -->
 
             <li class="nav-item">

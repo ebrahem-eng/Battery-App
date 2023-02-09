@@ -25,7 +25,7 @@
                             </thead>
                             <tbody>
                               @foreach (session('one_table_systems') as $table)
-                                <tr>
+                                <tr  style="font-size: 22px">
                                   <th scope="row">{{ $table->id }}</th>
                                   <td>{{ $table->name }}</td>
                                   <td>{{ $table->number_battery }}</td>
@@ -64,7 +64,7 @@
                                 </thead>
                                 <tbody>
                                     @foreach (session('two_table_systems') as $table)
-                                        <tr>
+                                        <tr style="font-size: 22px">
                                             <th scope="row">{{ $table->id }}</th>
                                             <td>{{ $table->name }}</td>
                                             <td>{{ $table->number_battery }}</td>
@@ -101,7 +101,7 @@
                                 </thead>
                                 <tbody>
                                     @foreach (session('three_table_systems') as $table)
-                                        <tr>
+                                        <tr style="font-size: 22px">
                                             <th scope="row">{{ $table->id }}</th>
                                             <td>{{ $table->name }}</td>
                                             <td>{{ $table->number_battery }}</td>
@@ -138,7 +138,7 @@
                              </thead>
                              <tbody>
                                  @foreach (session('fourth_table_systems') as $table)
-                                     <tr>
+                                     <tr style="font-size: 22px">
                                          <th scope="row">{{ $table->id }}</th>
                                          <td>{{ $table->name }}</td>
                                          <td>{{ $table->number_battery }}</td>
@@ -175,7 +175,7 @@
                              </thead>
                              <tbody>
                                  @foreach (session('five_table_systems') as $table)
-                                     <tr>
+                                     <tr style="font-size: 22px"> 
                                          <th scope="row">{{ $table->id }}</th>
                                          <td>{{ $table->name }}</td>
                                          <td>{{ $table->number_battery }}</td>
@@ -212,7 +212,7 @@
                              </thead>
                              <tbody>
                                  @foreach (session('six_table_systems') as $table)
-                                     <tr>
+                                     <tr style="font-size: 22px">
                                          <th scope="row">{{ $table->id }}</th>
                                          <td>{{ $table->name }}</td>
                                          <td>{{ $table->number_battery }}</td>

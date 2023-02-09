@@ -15,7 +15,4 @@ class Loads extends Model
         'value',
     ];
 
-   
-
-  
 }
