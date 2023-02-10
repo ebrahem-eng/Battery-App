@@ -27,6 +27,8 @@ Route::middleware(['auth', 'verified', 'role:Admin'])->prefix('admin')->group(fu
  Route::delete('/loads/soft/delete/{loads}',[LoadsController::class ,'destroy'])->name('admin.softdelete.loads');
  Route::delete('/loads/force/delete/{id}',[LoadsController::class ,'force_delete'])->name('admin.forcedelete.loads');
  Route::get('/loads/restore/{id}',[LoadsController::class ,'restore'])->name('admin.restore.loads');
+ Route::get('/loads/edit/{loads}',[LoadsController::class , 'edit'])->name('admin.edit.loads');
+ Route::put('/loads/update/{loads}',[LoadsController::class , 'update'])->name('admin.update.loads');
 
 });
 //<================== end admin section ============>

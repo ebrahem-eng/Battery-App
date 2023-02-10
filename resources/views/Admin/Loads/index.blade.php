@@ -30,6 +30,14 @@
                         {{ header('refresh : 2') }}
                     @endif
 
+                    @if (session('delete_error_message'))
+                    <div class="alert alert-danger alert-dismissible bg-danger text-white border-0 fade show"
+                        id="error-alert" role="alert">
+                        {{ session('delete_error_message') }}
+                    </div>
+                    {{ header('refresh : 2') }}
+                @endif
+
                     @if (session('store_success_message'))
                         <div class="alert alert-success alert-dismissible bg-success text-white border-0 fade show"
                             id="error-alert" role="alert">
@@ -37,6 +45,14 @@
                         </div>
                         {{ header('refresh : 2') }}
                     @endif
+
+                    @if (session('update_success_message'))
+                    <div class="alert alert-success alert-dismissible bg-success text-white border-0 fade show"
+                        id="error-alert" role="alert">
+                        {{ session('update_success_message') }}
+                    </div>
+                    {{ header('refresh : 2') }}
+                @endif
                     <!-- end error section -->
 
                     <div class="card-body">
@@ -63,7 +79,7 @@
                                             <th scope="row">{{ $load->id }}</th>
                                             <td>{{ $load->name }}</td>
                                             <td>{{ $load->value }}</td>
-                                            <td class="text-center"><a href=""><i
+                                            <td class="text-center"><a href="{{route('admin.edit.loads',$load->id)}}"><i
                                                         class="bi bi-pencil-square fs-6"></i></a></td>
                                             <td><button type="button" data-bs-toggle="modal"
                                                     data-bs-target="#exampleModal">
