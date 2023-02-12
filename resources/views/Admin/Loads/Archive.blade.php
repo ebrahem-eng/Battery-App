@@ -31,12 +31,12 @@
                     @endif
 
                     @if (session('delete_error_message'))
-                    <div class="alert alert-danger alert-dismissible bg-danger text-white border-0 fade show"
-                        id="error-alert" role="alert">
-                        {{ session('delete_error_message') }}
-                    </div>
-                    {{ header('refresh : 2') }}
-                @endif
+                        <div class="alert alert-danger alert-dismissible bg-danger text-white border-0 fade show"
+                            id="error-alert" role="alert">
+                            {{ session('delete_error_message') }}
+                        </div>
+                        {{ header('refresh : 2') }}
+                    @endif
 
 
                     @if (session('restore_success_message'))
@@ -48,12 +48,12 @@
                     @endif
 
                     @if (session('restore_error_message'))
-                    <div class="alert alert-danger alert-dismissible bg-danger text-white border-0 fade show"
-                        id="error-alert" role="alert">
-                        {{ session('restore_error_message') }}
-                    </div>
-                    {{ header('refresh : 2') }}
-                @endif
+                        <div class="alert alert-danger alert-dismissible bg-danger text-white border-0 fade show"
+                            id="error-alert" role="alert">
+                            {{ session('restore_error_message') }}
+                        </div>
+                        {{ header('refresh : 2') }}
+                    @endif
                     <!-- end error section -->
 
                     <div class="card-body">
@@ -71,7 +71,9 @@
                                         <th scope="col"></th>
 
                                     </tr>
+                                    
                                 </thead>
+                           
                                 <tbody>
                                     @foreach ($loads_trashed as $load)
                                         <tr style="font-size: 22px">
@@ -83,12 +85,18 @@
                                                     href="{{ route('admin.restore.loads', $load->id) }}">
                                                     <i class="bi bi-arrow-clockwise"></i></a></td>
                                             <td>
-                                                <button type="button" data-bs-toggle="modal"
-                                                    data-bs-target="#exampleModal">
-                                                    <i class="bi bi-person-dash-fill"></i>
+                                                <form action="{{route('admin.forcedelete.loads' , $load->id)}}" method="POST">
+                                                    @csrf
+                                                    @method('delete')
+                                                    <button type="submit">
+                                                        <i class="bi bi-person-dash-fill"></i>
                                                 </button>
+                                                </form>
+                                             
                                             </td>
+                                            
                                         </tr>
+                                       
                                     @endforeach
                                 </tbody>
                             </table>
@@ -99,36 +107,6 @@
 
         </div>
         </div>
-
-        <!-- Button trigger modal -->
-
-        <!-- Modal -->
-        @foreach ($loads_trashed as $load)
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="exampleModalLabel">حذف بيانات الحمل</h1>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            هل أنت متأكد من حذف جميع بيانات الحمل ؟
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">إلغاء</button>
-
-                            <form action="{{ route('admin.forcedelete.loads', $load->id) }}" method="POST">
-                                @csrf
-                                @method('delete')
-                                <button type="submit" class="btn btn-primary">حذف</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        @endforeach
     </section>
 
 </main>

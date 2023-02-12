@@ -37,52 +37,57 @@
                     <span>الرئيسية</span>
                 </a>
             </li>
-            <!-- End Dashboard Nav -->
 
             <li class="nav-item">
-                <a
-                  class="nav-link collapsed"
-                  data-bs-target="#components-nav"
-                  data-bs-toggle="collapse"
-                  href="#"
-                >
-                <i class="bi bi-clock-fill"></i></i><span>ادارة الاحمال</span
-                  >
-                <i class="bi bi-chevron-down ms-auto"></i>
+                <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-clock-fill"></i>
+                    <span>ادارة الاحمال</span>
+                    <i class="bi bi-chevron-down ms-auto"></i>
                 </a>
-                <ul
-                  id="components-nav"
-                  class="nav-content collapse"
-                  data-bs-parent="#sidebar-nav"
-                >
-                 
-                  <li>
-                    <a href="{{route('admin.show.loads')}}">
-                      <i class="bi bi-circle"></i><span>استعراض الاحمال</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="{{route('admin.archive.loads')}}">
-                      <i class="bi bi-circle"></i><span>ارشيف الاحمال</span>
-                    </a>
-                  </li>
-           
+                <ul id="components-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="{{ route('admin.show.loads') }}">
+                            <i class="bi bi-circle"></i>
+                            <span>استعراض الاحمال</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('admin.archive.loads') }}">
+                            <i class="bi bi-circle"></i>
+                            <span>ارشيف الاحمال</span>
+                        </a>
+                    </li>
                 </ul>
-              </li>
-      
-            <!-- End Icons Nav -->
+            </li>
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="">
-                    <i class="bi bi-lightning-charge-fill"></i>
+                <a class="nav-link collapsed" data-bs-target="#components-nav2" data-bs-toggle="collapse"
+                    href="#">
+                    <i class="bi bi-clock-fill"></i>
                     <span>ادارة المنظومات</span>
+                    <i class="bi bi-chevron-down ms-auto"></i>
                 </a>
+                <ul id="components-nav2" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="{{ route('admin.show.systems') }}">
+                            <i class="bi bi-circle"></i>
+                            <span>استعراض المنظومات</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{route('admin.archive.systems')}}">
+                            <i class="bi bi-circle"></i>
+                            <span>ارشيف المنظومات</span>
+                        </a>
+                    </li>
+                </ul>
             </li>
-            <!-- End Icons Nav -->
-
         </ul>
     </aside>
     <!-- End Sidebar-->
+     
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
     <!-- Vendor JS Files -->
     <script src="{{ asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>

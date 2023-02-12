@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\Loads\LoadsController;
+use App\Http\Controllers\Admin\Systems\SystemController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\User\UserController;
 use Illuminate\Support\Facades\Route;
@@ -29,6 +30,14 @@ Route::middleware(['auth', 'verified', 'role:Admin'])->prefix('admin')->group(fu
  Route::get('/loads/restore/{id}',[LoadsController::class ,'restore'])->name('admin.restore.loads');
  Route::get('/loads/edit/{loads}',[LoadsController::class , 'edit'])->name('admin.edit.loads');
  Route::put('/loads/update/{loads}',[LoadsController::class , 'update'])->name('admin.update.loads');
+
+ Route::get('/systems/show',[SystemController::class , 'index'])->name('admin.show.systems');
+ Route::get('/systems/create',[SystemController::class , 'create'])->name('admin.create.systems');
+ Route::post('/systems/store',[SystemController::class ,'store'])->name('admin.store.systems');
+ Route::get('/systems/edit/{systems}',[SystemController::class , 'edit'])->name('admin.edit.systems');
+ Route::put('/systems/update/{systems}',[SystemController::class , 'update'])->name('admin.update.systems');
+ Route::delete('/systems/soft/delete/{systems}',[SystemController::class , 'destroy'])->name('admin.softdelete.systems');
+ Route::get('/systems/archive',[SystemController::class , 'archive'])->name('admin.archive.systems');
 
 });
 //<================== end admin section ============>

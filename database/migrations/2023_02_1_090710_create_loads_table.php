@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('loads', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('name')->unique()->index();
             $table->integer('value');
             $table->softDeletes();
             $table->timestamps();
