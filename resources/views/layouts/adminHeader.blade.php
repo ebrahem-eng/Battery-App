@@ -58,19 +58,13 @@
                        <span class="badge bg-primary badge-number"></span> </a><!-- End Notification Icon -->
 
                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications list-group ">
-                       <li>
-                           <hr class="dropdown-divider" />
-                       </li>
+                    
 
                        <li class="notification-item">
-                           <i class="bi bi-exclamation-circle text-warning"></i>
+                           <i class="bi bi-check-circle text-success"></i>
                            <div>
                                <h4>لايوجد اشعارات</h4>
                            </div>
-                       </li>
-
-                       <li>
-                           <hr class="dropdown-divider" />
                        </li>
 
                    </ul>

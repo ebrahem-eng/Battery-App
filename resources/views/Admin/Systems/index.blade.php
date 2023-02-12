@@ -21,7 +21,7 @@
                 <div class="card">
 
                     <!--  error section -->
-                    <!-- Include jQuery and Bootstrap JS libraries -->
+          
 
                     @if (session('delete_success_message'))
                         <div class="alert alert-success alert-dismissible bg-success text-white border-0 fade show"
@@ -74,6 +74,7 @@
                                 <i class="bi bi-plus-square"></i>
                             </a>
                         </div>
+                        @if(count($systems)>0)
                         <div style="overflow-x:auto;">
                             <table class="table datatable">
                                 <thead>
@@ -123,6 +124,11 @@
                                             </td>
                                         </tr>
                                     @endforeach
+                                    @else
+                                    <div class="card-title text-center">
+                                        <h4 style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif">لا يوجد بيانات</h4>
+                                    </div>
+                                    @endif
                                 </tbody>
                             </table>
                         </div>

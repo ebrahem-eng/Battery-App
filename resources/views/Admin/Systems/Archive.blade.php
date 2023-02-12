@@ -44,33 +44,32 @@
                         </div>
                     @endif
 
-
-                    @if (session('store_success_message'))
-                        <div class="alert alert-success alert-dismissible bg-success text-white border-0 fade show"
+                    @if (session('restore_success_message'))
+                    <div class="alert alert-success alert-dismissible bg-success text-white border-0 fade show"
                             id="success-alert" role="alert">
-                            {{ session('store_success_message') }}
+                            {{ session('restore_success_message') }}
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
-                    @endif
+                @endif
 
-                    @if (session('update_success_message'))
-                        <div class="alert alert-success alert-dismissible bg-success text-white border-0 fade show"
-                            id="success-alert" role="alert">
-                            {{ session('update_success_message') }}
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                    @endif
-
+                @if (session('restore_error_message'))
+                <div class="alert alert-danger alert-dismissible bg-danger text-white border-0 fade show"
+                id="success-alert" role="alert">
+                {{ session('restore_error_message') }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+                @endif
                     <!-- end error section -->
 
                     <div class="card-body">
                         <div class="card-title">
 
                         </div>
+                        @if(count($systems)>0)
                         <div style="overflow-x:auto;">
                             <table class="table datatable">
                                 <thead>
@@ -83,12 +82,14 @@
                                         <th scope="col">استطاعة البطارية</th>
                                         <th scope="col">عدد ساعات الشحن</th>
                                         <th scope="col">نفاصيل اخرى</th>
+                                        <th scope="col">تاريخ الحذف</th>
                                         <th scope="col"></th>
                                         <th scope="col"></th>
 
                                     </tr>
                                 </thead>
                                 <tbody>
+                                  
                                     @foreach ($systems as $system)
                                         <tr style="font-size: 22px">
                                             <th scope="row">{{ $system->id }}</th>
@@ -99,15 +100,16 @@
                                             <td>{{ $system->watt_battery }}</td>
                                             <td>{{ $system->Number_hours_for_charge }}</td>
                                             <td>{{ $system->details }}</td>
+                                            <td>{{$system->deleted_at}}</td>
 
-                                            <td class="text-center">
-                                                <a type="button" href="">
+                                            <td  class="text-center">
+                                                <a type="button" href="{{route('admin.restore.systems' , $system->id)}}">
                                                     <i class="bi bi-arrow-clockwise"></i>
                                                 </a>
                                             </td>
 
                                             <td>
-                                                <form action="" method="POST">
+                                                <form action="{{route('admin.forcedelete.systems' , $system->id)}}" method="POST">
                                                     @csrf
                                                     @method('delete')
                                                     <button type="submit">
@@ -116,9 +118,16 @@
                                                 </form>
 
                                             </td>
+                                           
                                         </tr>
-                                    @endforeach
+                                        @endforeach 
+                                        @else
+                                        <div class="card-title text-center">
+                                            <h4 style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif">لا يوجد بيانات</h4>
+                                        </div>
+                                        @endif
                                 </tbody>
+                               
                             </table>
                         </div>
                     </div>

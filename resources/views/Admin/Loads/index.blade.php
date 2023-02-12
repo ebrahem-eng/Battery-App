@@ -23,35 +23,43 @@
                     <!--  error section -->
 
                     @if (session('delete_success_message'))
-                        <div class="alert alert-success alert-dismissible bg-success text-white border-0 fade show"
-                            id="error-alert" role="alert">
-                            {{ session('delete_success_message') }}
-                        </div>
-                        {{ header('refresh : 2') }}
+                    <div class="alert alert-success alert-dismissible bg-success text-white border-0 fade show"
+                    id="success-alert" role="alert">
+                    {{ session('delete_success_message') }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
                     @endif
 
                     @if (session('delete_error_message'))
-                        <div class="alert alert-danger alert-dismissible bg-danger text-white border-0 fade show"
-                            id="error-alert" role="alert">
-                            {{ session('delete_error_message') }}
-                        </div>
-                        {{ header('refresh : 2') }}
+                    <div class="alert alert-danger alert-dismissible bg-danger text-white border-0 fade show"
+                    id="success-alert" role="alert">
+                    {{ session('delete_error_message') }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
                     @endif
 
                     @if (session('store_success_message'))
-                        <div class="alert alert-success alert-dismissible bg-success text-white border-0 fade show"
-                            id="error-alert" role="alert">
-                            {{ session('store_success_message') }}
-                        </div>
-                        {{ header('refresh : 2') }}
+                    <div class="alert alert-success alert-dismissible bg-success text-white border-0 fade show"
+                    id="success-alert" role="alert">
+                    {{ session('store_success_message') }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
                     @endif
 
                     @if (session('update_success_message'))
-                        <div class="alert alert-success alert-dismissible bg-success text-white border-0 fade show"
-                            id="error-alert" role="alert">
-                            {{ session('update_success_message') }}
-                        </div>
-                        {{ header('refresh : 2') }}
+                    <div class="alert alert-success alert-dismissible bg-success text-white border-0 fade show"
+                    id="success-alert" role="alert">
+                    {{ session('update_success_message') }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
                     @endif
                     <!-- end error section -->
 
@@ -61,6 +69,7 @@
                                 <i class="bi bi-plus-square"></i>
                             </a>
                         </div>
+                        @if(count($loads)>0)
                         <div style="overflow-x:auto;">
                             <table class="table datatable">
                                 <thead>
@@ -92,6 +101,11 @@
                                                 </form>
                                         </tr>
                                     @endforeach
+                                    @else
+                                    <div class="card-title text-center">
+                                        <h4 style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif">لا يوجد بيانات</h4>
+                                    </div>
+                                    @endif
                                 </tbody>
                             </table>
                         </div>

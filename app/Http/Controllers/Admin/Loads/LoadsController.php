@@ -8,16 +8,30 @@ use Illuminate\Http\Request;
 
 class LoadsController extends Controller
 {
+    //عرض جدول الاحمال
+
     public function index()
     {
-        $loads = Loads::all();
-        return view('Admin/Loads/index', compact('loads'));
+        try {
+            $loads = Loads::all();
+            return view('Admin/Loads/index', compact('loads'));
+        } catch (\Exception $ex) {
+            return redirect()->route('notfound');
+        }
     }
+
+    //عرض صفحة اضافة حمل
 
     public function create()
     {
-        return view('Admin/Loads/create');
+        try {
+            return view('Admin/Loads/create');
+        } catch (\Exception $ex) {
+            return redirect()->route('notfound');
+        }
     }
+
+    //تخزين الاحمال الجديدة في قاعدة البيانات
 
     public function store(Request $request)
     {
@@ -32,6 +46,8 @@ class LoadsController extends Controller
         }
     }
 
+    //حذف الاحمال ونقلها الى الارشيف
+
     public function destroy(Loads $loads)
     {
 
@@ -43,11 +59,19 @@ class LoadsController extends Controller
         }
     }
 
+    //عرض جدول الارشيف
+
     public function archive()
     {
-        $loads_trashed = Loads::onlyTrashed()->get();
-        return view('Admin/Loads/Archive', compact('loads_trashed'));
+        try {
+            $loads_trashed = Loads::onlyTrashed()->get();
+            return view('Admin/Loads/Archive', compact('loads_trashed'));
+        } catch (\Exception $ex) {
+            return redirect()->route('notfound');
+        }
     }
+
+    //حذف الاحمال نهائيا من قاعدة البيانات 
 
     public function force_delete($id)
     {
@@ -59,6 +83,8 @@ class LoadsController extends Controller
         }
     }
 
+    //استعادة الاحمال المحذوفة 
+
     public function restore($id)
     {
         try {
@@ -69,10 +95,19 @@ class LoadsController extends Controller
         }
     }
 
+    //عرض صفحة تعديل الاحمال
+
     public function edit(Loads $loads)
     {
-        return view('Admin/Loads/edit', compact('loads'));
+        try {
+
+            return view('Admin/Loads/edit', compact('loads'));
+        } catch (\Exception $ex) {
+            return redirect()->route('notfound');
+        }
     }
+
+    //تعديل الاحمال في قاعدة البيانات
 
     public function update(Request $request, Loads $loads)
     {

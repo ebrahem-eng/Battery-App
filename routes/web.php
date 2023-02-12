@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 //<================== admin section ===============>
+//<================= loads route section ===========>
 Route::middleware(['auth', 'verified', 'role:Admin'])->prefix('admin')->group(function () {
  Route::get('/',[AdminController::class , 'index'])->name('admin.index');
  Route::get('/loads/show',[LoadsController::class ,'index'])->name('admin.show.loads');
@@ -31,6 +32,7 @@ Route::middleware(['auth', 'verified', 'role:Admin'])->prefix('admin')->group(fu
  Route::get('/loads/edit/{loads}',[LoadsController::class , 'edit'])->name('admin.edit.loads');
  Route::put('/loads/update/{loads}',[LoadsController::class , 'update'])->name('admin.update.loads');
 
+ //<=========== systems route section ====================>
  Route::get('/systems/show',[SystemController::class , 'index'])->name('admin.show.systems');
  Route::get('/systems/create',[SystemController::class , 'create'])->name('admin.create.systems');
  Route::post('/systems/store',[SystemController::class ,'store'])->name('admin.store.systems');
@@ -38,7 +40,8 @@ Route::middleware(['auth', 'verified', 'role:Admin'])->prefix('admin')->group(fu
  Route::put('/systems/update/{systems}',[SystemController::class , 'update'])->name('admin.update.systems');
  Route::delete('/systems/soft/delete/{systems}',[SystemController::class , 'destroy'])->name('admin.softdelete.systems');
  Route::get('/systems/archive',[SystemController::class , 'archive'])->name('admin.archive.systems');
-
+ Route::get('/systems/restore/{id}',[SystemController::class ,'restore'])->name('admin.restore.systems');
+ Route::delete('/systems/force/delete/{id}',[SystemController::class ,'force_delete'])->name('admin.forcedelete.systems');
 });
 //<================== end admin section ============>
 
@@ -46,6 +49,7 @@ Route::middleware(['auth', 'verified', 'role:Admin'])->prefix('admin')->group(fu
 
 //Route::get('/', function () {return view('welcome');})->name('user.index');
 Route::get('/', [UserController::class, 'Show_load_watt'])->name('show.load');
+Route::get('/notfound',function(){ return view('pages-error-404');})->name('notfound');
 Route::get('/user/calculate/watt/sum', [UserController::class, 'Calculate_Sum_Watting'])->name('calculate.watt');
 Route::get('/user/calculate/watt/time', [UserController::class, 'Calculate_watt_time'])->name('calculate.watt.time');
 Route::get('/user/show/possibilities', [UserController::class, 'show_page_possibilities'])->name('show.page.possibilities');

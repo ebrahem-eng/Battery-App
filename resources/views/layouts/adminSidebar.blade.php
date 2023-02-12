@@ -63,7 +63,7 @@
             <li class="nav-item">
                 <a class="nav-link collapsed" data-bs-target="#components-nav2" data-bs-toggle="collapse"
                     href="#">
-                    <i class="bi bi-clock-fill"></i>
+                    <i class="bi bi-lightning-charge-fill"></i>
                     <span>ادارة المنظومات</span>
                     <i class="bi bi-chevron-down ms-auto"></i>
                 </a>

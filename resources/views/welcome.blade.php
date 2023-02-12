@@ -12,11 +12,13 @@
 
                     <!-- error message  -->
                     @if (session('error_message'))
-                        <div class="alert alert-danger alert-dismissible bg-danger text-white border-0 fade show"
-                            id="error-alert" role="alert">
-                            {{ session('error_message') }}
-                        </div>
-                        {{ header('refresh : 2') }}
+                    <div class="alert alert-danger alert-dismissible bg-danger text-white border-0 fade show"
+                    id="success-alert" role="alert">
+                    {{ session('error_message') }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
                     @endif
 
                     <!-- end error message -->
@@ -45,7 +47,6 @@
             </div>
         </div>
     </section>
-
     <a href="#main" class="scroll-down">
         <i class="fas fa-chevron-up"></i>
     </a>

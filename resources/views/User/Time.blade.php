@@ -9,34 +9,44 @@
 
                     <!-- ========== error message  ========-->
                     @if (session('error_null_number_message'))
-                        <div class="alert alert-danger alert-dismissible bg-danger text-white border-0 fade show"
-                            id="error-alert" role="alert">
-                            {{ session('error_null_number_message') }}
-                        </div>
-                        {{ header('refresh : 2') }}
+                    <div class="alert alert-danger alert-dismissible bg-danger text-white border-0 fade show"
+                    id="success-alert" role="alert">
+                    {{ session('error_null_number_message') }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
                     @endif
+
                     @if (session('error_minus_number_message'))
-                        <div class="alert alert-danger alert-dismissible bg-danger text-white border-0 fade show"
-                            id="error-alert" role="alert">
-                            {{ session('error_minus_number_message') }}
-                        </div>
-                        {{ header('refresh : 2') }}
+                           <div class="alert alert-danger alert-dismissible bg-danger text-white border-0 fade show"
+                    id="success-alert" role="alert">
+                    {{ session('error_minus_number_message') }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
                     @endif
 
                     @if (session('error_message'))
-                        <div class="alert alert-danger alert-dismissible bg-danger text-white border-0 fade show"
-                            id="error-alert" role="alert">
-                            {{ session('error_message') }}
-                        </div>
-                        {{ header('refresh : 2') }}
+                         <div class="alert alert-danger alert-dismissible bg-danger text-white border-0 fade show"
+                    id="success-alert" role="alert">
+                    {{ session('error_message') }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
                     @endif
 
                     @if (session('error_max_watt_message'))
-                        <div class="alert alert-danger alert-dismissible bg-danger text-white border-0 fade show"
-                            id="error-alert" role="alert">
-                            {{ session('error_max_watt_message') }}
-                        </div>
-                        {{ header('refresh : 2') }}
+                    <div class="alert alert-danger alert-dismissible bg-danger text-white border-0 fade show"
+                    id="success-alert" role="alert">
+                    {{ session('error_max_watt_message') }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
                     @endif
                     <!-- ========== end error message  ========-->
 
