@@ -59,7 +59,7 @@ Route::middleware(['auth', 'verified'])->prefix('admin')->group(function () {
     Route::get('/administrators/resetpassword', [AdministratorController::class, 'show_reset_password'])->name('admin.show.resetpassword.administrators')->middleware(['permission:اعادة تعين كلمة المرور']);
     Route::get('/administrators/edit/password/{administrators}', [AdministratorController::class, 'edit_password'])->name('admin.edit.password.administrators')->middleware(['permission:اعادة تعين كلمة المرور']);
     Route::put('/administrators/update/password/{administrators}', [AdministratorController::class, 'update_password'])->name('admin.update.password.administrators')->middleware(['permission:اعادة تعين كلمة المرور']);
-    Route::get('/administrators/show/permission/administrators/{administrators}',[AdministratorController::class , 'show_administrators_permissions'])->name('admin.show.permissionsadministrators.administrators')->middleware(['permission:استعراض صلاحيات مسؤول']);
+    Route::get('/administrators/show/permission/administrators/{administrators}', [AdministratorController::class, 'show_administrators_permissions'])->name('admin.show.permissionsadministrators.administrators')->middleware(['permission:استعراض صلاحيات مسؤول']);
     Route::post('/administrators/{administrators}/permissions', [AdministratorController::class, 'givepermission'])->name('admin.permissions.giv.administrators')->middleware(['permission:اعطاء صلاحية']);
     Route::delete('/administrators/{administrators}/permissions/{permission}', [AdministratorController::class, 'revokepermission'])->name('admin.permissions.revoke.administrators')->middleware(['permission:سحب صلاحية']);
 });
@@ -86,7 +86,7 @@ Route::get('/user/six/TableSystem', [UserController::class, 'six_table_system'])
 //<================== end user section ===============>
 
 
-Route::middleware('auth')->group(function () {
+Route::middleware(['auth', 'permission:تعديل الملف الشخصي'])->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');

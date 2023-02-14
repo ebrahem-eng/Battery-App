@@ -9,10 +9,10 @@
                 <div class="card">
 
                     <!--  error section -->
-                    @if (session('store_error_message'))
+                    @if (session('update_error_message'))
                         <div class="alert alert-danger alert-dismissible bg-danger text-white border-0 fade show"
                             id="success-alert" role="alert">
-                            {{ session('store_error_message') }}
+                            {{ session('update_error_message') }}
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>

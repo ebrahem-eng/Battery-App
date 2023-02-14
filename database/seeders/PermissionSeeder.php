@@ -66,5 +66,7 @@ class PermissionSeeder extends Seeder
         Permission::create(['name'=>'استعراض الصلاحيات']);
 
         Permission::create(['name'=>'اعادة تعين كلمة المرور']);
+
+        Permission::create(['name'=>'تعديل الملف الشخصي']);
     }
 }

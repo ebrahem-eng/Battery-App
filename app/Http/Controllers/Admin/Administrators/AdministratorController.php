@@ -10,121 +10,220 @@ use Spatie\Permission\Models\Permission;
 
 class AdministratorController extends Controller
 {
+    //عرض جدول المسؤولين 
+
     public function index()
     {
-        $administrators = User::all();
-        return view('Admin/Administrators/index' , compact('administrators'));
+        try {
+
+            $administrators = User::all();
+            return view('Admin/Administrators/index', compact('administrators'));
+        } catch (\Exception $ex) {
+            return redirect()->route('notfound');
+        }
     }
+
+    //عرض صفحة اضافة مسؤول
 
     public function create()
     {
-        return view('Admin/Administrators/create');
+        try {
+
+            return view('Admin/Administrators/create');
+        } catch (\Exception $ex) {
+
+            return redirect()->route('notfound');
+        }
     }
+
+    //تخزين المسؤول في قاعدة البيانات 
 
     public function store(Request $request)
     {
-        User::create([
-            'name'=>$request->name,
-            'email'=>$request->email,
-            'email_verified_at' => now(),
-            'password' => Hash::make($request->password),
-        ]);
-        return redirect()->route('admin.show.administrators')->with('store_success_message','تم اضافة المسؤول بنجاح');
+        try {
+
+            User::create([
+                'name' => $request->name,
+                'email' => $request->email,
+                'email_verified_at' => now(),
+                'password' => Hash::make($request->password),
+            ]);
+            return redirect()->route('admin.show.administrators')->with('store_success_message', 'تم اضافة المسؤول بنجاح');
+        } catch (\Exception $ex) {
+
+            return redirect()->back()->with('store_error_message', 'خطأ ما الرجاء التأكد من صحة البيانات');
+        }
     }
+
+    //عرض صفحة تعديل المسؤول
 
     public function edit(User $administrators)
     {
 
-        return view('Admin/Administrators/edit' , compact('administrators'));
+        try {
+            return view('Admin/Administrators/edit', compact('administrators'));
+        } catch (\Exception $ex) {
+
+            return redirect()->route('notfound');
+        }
     }
 
-    public function update(Request $request , User $administrators)
+    //تخزين التعديل في قاعدة البيانات
+
+    public function update(Request $request, User $administrators)
     {
-        $administrators->update([
-            'name'=>$request->name,
-            'email'=>$request->email,
-            'email_verified_at' => now(),
-        ]);
+        try {
 
-        return redirect()->route('admin.show.administrators')->with('update_success_message','تم تعديل بيانات المسؤول بنجاح');
+            $administrators->update([
+                'name' => $request->name,
+                'email' => $request->email,
+                'email_verified_at' => now(),
+            ]);
+
+            return redirect()->route('admin.show.administrators')->with('update_success_message', 'تم تعديل بيانات المسؤول بنجاح');
+        } catch (\Exception $ex) {
+
+            return redirect()->back()->with('update_error_message', 'خطأ ما الرجاء التأكد من صحة البيانات');
+        }
     }
+
+    //حذف المسؤول
 
     public function destroy(User $administrators)
     {
-      $administrators->delete();
-      return redirect()->back()->with('delete_success_message', 'تم حذف المسؤول بنجاح');
+        try {
+
+            $administrators->delete();
+            return redirect()->back()->with('delete_success_message', 'تم حذف المسؤول بنجاح');
+        } catch (\Exception $ex) {
+
+            return redirect()->back()->with('delete_error_message', 'خطأ ما يرجى اعادة المحاولة');
+        }
     }
+    //عرض صفحة الارشيف 
 
     public function archive()
     {
-        $administrators = User::onlyTrashed()->get();
-        return view('Admin/Administrators/Archive' , compact('administrators'));
+        try {
+
+            $administrators = User::onlyTrashed()->get();
+            return view('Admin/Administrators/Archive', compact('administrators'));
+        } catch (\Exception $ex) {
+            return redirect()->route('notfound');
+        }
     }
+    //استعادة المسؤول بعد الحذف
 
     public function restore($id)
     {
-        User::withTrashed()->where('id', $id)->restore();
-        return redirect()->back()->with('restore_success_message', 'تم استعادة المسؤول بنجاح');
+        try {
+            User::withTrashed()->where('id', $id)->restore();
+            return redirect()->back()->with('restore_success_message', 'تم استعادة المسؤول بنجاح');
+        } catch (\Exception $ex) {
+
+            return redirect()->back()->with('restore_error_message', 'خطأ ما يرجى اعادة المحاولة');
+        }
     }
+
+    //حذف المسؤول نهائيا
 
     public function force_delete($id)
     {
-        
+        try {
+
             User::withTrashed()->where('id', $id)->forceDelete();
             return redirect()->back()->with('delete_success_message', 'تم حذف المسؤول بنجاح');
+        } catch (\Exception $ex) {
+            return redirect()->back()->with('delete_error_message', 'خطأ ما يرجى اعادة المحاولة');
+        }
     }
+
+    //عرض صفحة الصلاحيات
 
     public function show_permission()
     {
-        $permissions = Permission::all();
-        return view('Admin/Administrators/Show-Permission' , compact('permissions'));
+        try {
+
+            $permissions = Permission::all();
+            return view('Admin/Administrators/Show-Permission', compact('permissions'));
+        } catch (\Exception $ex) {
+            return redirect()->route('notfound');
+        }
     }
+
+    //عرض صفحة اعادة تعيين كلمة المرور
 
     public function show_reset_password()
     {
-        $administrators = User::all();
-        return view('Admin/Administrators/Reset-Password' , compact('administrators'));
+        try {
+
+            $administrators = User::all();
+            return view('Admin/Administrators/Reset-Password', compact('administrators'));
+        } catch (\Exception $ex) {
+            return redirect()->route('notfound');
+        }
     }
+
+    //عرض صفحة كتابة كلمة المرور الجديدة
 
     public function edit_password(User $administrators)
     {
-        return view('Admin/Administrators/edit-password' , compact('administrators'));
+        try {
+
+            return view('Admin/Administrators/edit-password', compact('administrators'));
+        } catch (\Exception $ex) {
+            return redirect()->route('notfound');
+        }
     }
 
-    public function update_password(Request $request , User $administrators)
+    //تخزين كلمة المرور الجديدة في قاعدة البيانات
+
+    public function update_password(Request $request, User $administrators)
     {
-        $administrators->update([
-            'password' => Hash::make($request->new_password)
-        ]);
-        return redirect()->route('admin.show.resetpassword.administrators')->with('update_success_message','تم تحديث كلمة المرور بنجاح');
+        try {
+
+            $administrators->update([
+                'password' => Hash::make($request->new_password)
+            ]);
+            return redirect()->route('admin.show.resetpassword.administrators')->with('update_success_message', 'تم تحديث كلمة المرور بنجاح');
+        } catch (\Exception $ex) {
+            return redirect()->back()->with('update_error_message', 'خطأ ما الرجاء التأكد من صحة البيانات');
+        }
     }
+
+    //عرض صفحة صلاحيات المسؤول 
 
     public function show_administrators_permissions(User $administrators)
     {
-        $permissions = Permission::all();
-        return view('Admin/Administrators/give-permission' , compact('administrators' , 'permissions'));
+        try {
+            $permissions = Permission::all();
+            return view('Admin/Administrators/give-permission', compact('administrators', 'permissions'));
+        } catch (\Exception $ex) {
+
+            return redirect()->route('notfound');
+        }
     }
 
-    public function givepermission(Request $request,User $administrators)
+    //اعطاء صلاحية للمسؤول
+
+    public function givepermission(Request $request, User $administrators)
     {
         if ($administrators->hasPermissionTo($request->permission)) {
             return back()->with('giv_error_message', 'الصلاحية موجودة بالفعل عند هذا المسؤول');
         }
         $administrators->givePermissionTo($request->permission);
-        return back()->with('give_success_message' , 'تم اعطاء الصلاحية بنجاح');
+        return back()->with('give_success_message', 'تم اعطاء الصلاحية بنجاح');
     }
 
-    public function revokepermission(User $administrators , Permission $permission)
+    //سحب صلاحية من المسؤول
+
+    public function revokepermission(User $administrators, Permission $permission)
     {
         if ($administrators->hasPermissionTo($permission)) {
             $administrators->revokePermissionTo($permission);
-            return back()->with('revoke_success_message' , 'تم سحب الصلاحية بنجاح');
+            return back()->with('revoke_success_message', 'تم سحب الصلاحية بنجاح');
         }
-   
-        return back()->with('revoke_error_message' , 'الصلاحية غير موجودة');
+
+        return back()->with('revoke_error_message', 'الصلاحية غير موجودة');
     }
-
-  
-
-
 }
