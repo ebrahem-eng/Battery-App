@@ -101,7 +101,7 @@
                                                         <i class="bi bi-pencil"></i></a></td>
                                                 
 
-                                                <td><a href="">
+                                                <td><a href="{{route('admin.show.permissionsadministrators.administrators' , $administrator->id )}}">
                                                         <i class="bi bi-key"></i>
                                                     </a>
                                                 </td>

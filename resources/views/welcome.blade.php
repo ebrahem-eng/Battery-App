@@ -47,17 +47,5 @@
             </div>
         </div>
     </section>
-    <a href="#main" class="scroll-down">
-        <i class="fas fa-chevron-up"></i>
-    </a>
-
-    <script>
-        const scrollDown = document.querySelector(".scroll-down");
-
-        scrollDown.addEventListener("click", () => {
-            document.querySelector("#main").scrollIntoView({
-                behavior: "smooth"
-            });
-        });
-    </script>
+     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 </main>

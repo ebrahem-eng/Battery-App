@@ -98,4 +98,33 @@ class AdministratorController extends Controller
         ]);
         return redirect()->route('admin.show.resetpassword.administrators')->with('update_success_message','تم تحديث كلمة المرور بنجاح');
     }
+
+    public function show_administrators_permissions(User $administrators)
+    {
+        $permissions = Permission::all();
+        return view('Admin/Administrators/give-permission' , compact('administrators' , 'permissions'));
+    }
+
+    public function givepermission(Request $request,User $administrators)
+    {
+        if ($administrators->hasPermissionTo($request->permission)) {
+            return back()->with('giv_error_message', 'الصلاحية موجودة بالفعل عند هذا المسؤول');
+        }
+        $administrators->givePermissionTo($request->permission);
+        return back()->with('give_success_message' , 'تم اعطاء الصلاحية بنجاح');
+    }
+
+    public function revokepermission(User $administrators , Permission $permission)
+    {
+        if ($administrators->hasPermissionTo($permission)) {
+            $administrators->revokePermissionTo($permission);
+            return back()->with('revoke_success_message' , 'تم سحب الصلاحية بنجاح');
+        }
+   
+        return back()->with('revoke_error_message' , 'الصلاحية غير موجودة');
+    }
+
+  
+
+
 }

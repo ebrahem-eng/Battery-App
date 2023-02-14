@@ -53,6 +53,10 @@ class PermissionSeeder extends Seeder
 
         Permission::create(['name'=>'اعطاء صلاحية']);
 
+        Permission::create(['name'=>'سحب صلاحية']);
+
+        Permission::create(['name'=>'استعراض صلاحيات مسؤول']);
+
         Permission::create(['name'=>'ارشيف المسؤولين']);
 
         Permission::create(['name'=>'استعادة مسؤول']);
