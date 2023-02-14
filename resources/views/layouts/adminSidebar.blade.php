@@ -82,6 +82,41 @@
                     </li>
                 </ul>
             </li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#components-nav3" data-bs-toggle="collapse"
+                    href="#">
+                    <i class="bi bi-shield-lock-fill"></i>
+                    <span>ادارة المسؤولين </span>
+                    <i class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="components-nav3" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="{{route('admin.show.administrators')}}">
+                            <i class="bi bi-circle"></i>
+                            <span>عرض المسؤولين</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{route('admin.showpermission.administrators')}}">
+                            <i class="bi bi-circle"></i>
+                            <span>عرض الصلاحيات</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{route('admin.archive.administrators')}}">
+                            <i class="bi bi-circle"></i>
+                            <span>ارشيف المسؤولين</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{route('admin.show.resetpassword.administrators')}}">
+                            <i class="bi bi-circle"></i>
+                            <span>اعادة تعين كلمة المرور</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
         </ul>
     </aside>
     <!-- End Sidebar-->

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\Administrators\AdministratorController;
 use App\Http\Controllers\Admin\Loads\LoadsController;
 use App\Http\Controllers\Admin\Systems\SystemController;
 use App\Http\Controllers\ProfileController;
@@ -20,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 
 //<================== admin section ===============>
 //<================= loads route section ===========>
-Route::middleware(['auth', 'verified', 'role:Admin'])->prefix('admin')->group(function () {
+Route::middleware(['auth', 'verified'])->prefix('admin')->group(function () {
  Route::get('/',[AdminController::class , 'index'])->name('admin.index');
  Route::get('/loads/show',[LoadsController::class ,'index'])->name('admin.show.loads');
  Route::get('/loads/create',[LoadsController::class ,'create'])->name('admin.create.loads');
@@ -42,6 +43,22 @@ Route::middleware(['auth', 'verified', 'role:Admin'])->prefix('admin')->group(fu
  Route::get('/systems/archive',[SystemController::class , 'archive'])->name('admin.archive.systems');
  Route::get('/systems/restore/{id}',[SystemController::class ,'restore'])->name('admin.restore.systems');
  Route::delete('/systems/force/delete/{id}',[SystemController::class ,'force_delete'])->name('admin.forcedelete.systems');
+
+ //<========== administrators route section ============>
+
+ Route::get('/administrators/show',[AdministratorController::class , 'index'])->name('admin.show.administrators');
+ Route::get('/administrators/create',[AdministratorController::class , 'create'])->name('admin.create.administrators');
+ Route::post('/administrators/store',[AdministratorController::class ,'store'])->name('admin.store.administrators');
+ Route::get('/administrators/edit/{administrators}',[AdministratorController::class , 'edit'])->name('admin.edit.administrators');
+ Route::put('/administrators/update/{administrators}',[AdministratorController::class , 'update'])->name('admin.update.administrators');
+ Route::delete('/administrators/soft/delete/{administrators}',[AdministratorController::class , 'destroy'])->name('admin.softdelete.administrators');
+ Route::get('/administrators/archive',[AdministratorController::class , 'archive'])->name('admin.archive.administrators');
+ Route::get('/administrators/restore/{id}',[AdministratorController::class ,'restore'])->name('admin.restore.administrators');
+ Route::delete('/administrators/force/delete/{id}',[AdministratorController::class ,'force_delete'])->name('admin.forcedelete.administrators');
+ Route::get('/administrators/show/permission',[AdministratorController::class , 'show_permission'])->name('admin.showpermission.administrators');
+Route::get('/administrators/resetpassword',[AdministratorController::class , 'show_reset_password'])->name('admin.show.resetpassword.administrators');
+Route::get('/administrators/edit/password/{administrators}',[AdministratorController::class , 'edit_password'])->name('admin.edit.password.administrators');
+Route::put('/administrators/update/password/{administrators}',[AdministratorController::class , 'update_password'])->name('admin.update.password.administrators');
 });
 //<================== end admin section ============>
 
