@@ -27,8 +27,8 @@
                             <div class="col-md-4">
                                 <label for="validationDefault01" class="form-label"> الاستطاعة الكلية:</label>
                                 <br>
-                                <input type="number" class="form-group" name="total-watt" value="{{ $watt_time }}"
-                                    readonly>
+                                <input style="direction: rtl" type="number" class="form-group" name="total-watt"
+                                    value="{{ $watt_time }}" readonly>
                                 <br>
                             </div>
                     </div>

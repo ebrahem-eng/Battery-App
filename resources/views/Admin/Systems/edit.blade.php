@@ -7,16 +7,16 @@
 
                 <div class="card">
 
-                    <!--  error section -->  
+                    <!--  error section -->
                     @if (session('update_error_message'))
-                    <div class="alert alert-danger alert-dismissible bg-danger text-white border-0 fade show"
-                    id="success-alert" role="alert">
-                    {{ session('update_error_message') }}
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                @endif
+                        <div class="alert alert-danger alert-dismissible bg-danger text-white border-0 fade show"
+                            id="success-alert" role="alert">
+                            {{ session('update_error_message') }}
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    @endif
                     <!-- end error section -->
 
                     <div class="card-body">
