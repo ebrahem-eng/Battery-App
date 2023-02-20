@@ -1,5 +1,5 @@
 @extends('layouts.userSidebar')
-@section('title', 'الاحمال النهائية')
+@section('title', 'تعديل ساعات التشغيل')
 <main id="main" class="main" dir="rtl">
     <section>
         <div class="row">
@@ -21,19 +21,24 @@
                     {{-- end error section --}}
 
                     <div class="card-body">
-                        <h5 class="card-title ">الاستطاعة الكلية:</h5>
-                        <form class="justify-content-center" action="{{ route('show.possibilities') }}" method="get">
+                        <h5 class="card-title ">تعديل ساعات التشغيل:</h5>
+                        <form class="justify-content-center" action="{{route('update.time')}}" method="get">
                             @csrf
-                            <div class="col-md-4">
-                                <label for="validationDefault01" class="form-label"> الاستطاعة الكلية:</label>
-                                <br>
-                                <input style="direction: rtl" type="number" class="form-group" name="total-watt"
-                                    value="{{$watt_time}}" readonly>
-                                <br>
-                            </div>
+                            <span>
+                                سيتم حساب الحمل النهائي بناء على قيمة الحمل الخاصة بك 
+                                <div style="color: blue">
+                                      قيمة الاحمال هي  {{$sum_watt}} واط :
+                                </div>
+                            </span>
+                            <br>
+                            
+                            <input type="hidden" name="total-watt-edit-time" value="{{$sum_watt}}">
+                            <input style="direction: rtl" type="number" class="form-group" name="time_warning_edit"
+                                value="{{$time}}">
+                            <br>
                     </div>
                     <div class="col-12 d-flex justify-content-center mb-3">
-                        <button class="btn btn-primary" type="submit">اظهار المنظومات المناسبة</button>
+                        <button class="btn btn-primary" type="submit">تعديل</button>
                     </div>
 
                     </form>
@@ -42,6 +47,6 @@
             </div>
 
         </div>
-        
+
     </section>
 </main>

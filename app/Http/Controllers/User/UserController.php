@@ -15,14 +15,12 @@ class UserController extends Controller
 
     public function Show_load_watt()
     {
-        try{
+        try {
             $loads = Loads::all();
             return view('welcome', ['loads' => $loads]);
+        } catch (\Exception $ex) {
+            return redirect()->back()->with('error_message', 'خطا ما الرجاءاعادة المحاولة');
         }
-     catch (\Exception $ex) {
-        return redirect()->back()->with('error_message', 'خطا ما الرجاءاعادة المحاولة');
-    }
-       
     }
 
     //حساب مجموع الواط في الساعة الواحدة للاحمال المحددة فقط 
@@ -59,19 +57,17 @@ class UserController extends Controller
             if ($time == 0) {
 
                 return redirect()->back()->with("error_null_number_message", 'الرجاء ادخال رقم');
-            } elseif ($time < 0)
-             {
+            } elseif ($time < 0) {
                 return redirect()->back()->with("error_minus_number_message", 'الرجاء ادخال رقم صحيح');
-            } 
-            else {
+            } else {
                 $watt_time = $sum_watt * $time;
 
-                if ($watt_time > 24000) {
+                if ($watt_time > 1500) {
+                    return view('User/Warning', compact('watt_time', 'sum_watt', 'time'));
+                } else if ($watt_time > 24000) {
 
                     return redirect()->back()->with("error_max_watt_message", 'ان اقصى واط يمكن حسابه هو ٢٤٠٠٠ واط الرجاء التواصل معنا');
-
-                } 
-                else {
+                } else {
                     return view('User/All_load', compact('watt_time'));
                 }
             }
@@ -80,12 +76,133 @@ class UserController extends Controller
         }
     }
 
+    //عرض صفحة التحذير
+
+    public function Calculate_watt_time_warning()
+    {
+        try {
+            return view('User/Warning');
+        } catch (\Exception $ex) {
+
+            return redirect()->route('notfound');
+        }
+    }
+
+    //التابع الخاص بزر المتابعة في صفحة التحذير
+    public function Calculate_watt_time_continu(Request $request)
+    {
+        try {
+
+            $watt_time = $request->input('load_warning');
+            return view('User/All_load', compact('watt_time'));
+        } catch (\Exception $ex) {
+            return redirect()->route('notfound');
+        }
+    }
+
+    //عرض صفحة تعديل قيمة الحمل
+
+    public function Calculate_watt_time_edit(Request $request)
+    {
+        try {
+
+            $sum_watt = $request->input('sum_watt_warning');
+            $time = $request->input('time_warning');
+            return view('User/edit_Loads', compact('sum_watt', 'time'));
+        } catch (\Exception $ex) {
+
+            return redirect()->route('notfound');
+        }
+    }
+
+    //تعديل قيمة الحمل
+
+    public function update_loads(Request $request)
+    {
+        try {
+
+            $sum_watt = $request->input('total-watt-edit');
+            $time = $request->input('time_warning');
+
+            if ($time == 0) {
+
+                return redirect()->back()->with("error_null_number_message", 'الرجاء ادخال رقم');
+            } elseif ($time < 0) {
+                return redirect()->back()->with("error_minus_number_message", 'الرجاء ادخال رقم صحيح');
+            } else {
+                $watt_time = $sum_watt * $time;
+
+                if ($watt_time > 1500) {
+                    return view('User/Warning', compact('watt_time', 'sum_watt', 'time'));
+                } else if ($watt_time > 24000) {
+
+                    return redirect()->back()->with("error_max_watt_message", 'ان اقصى واط يمكن حسابه هو ٢٤٠٠٠ واط الرجاء التواصل معنا');
+                } else {
+                    return view('User/All_load', compact('watt_time'));
+                }
+            }
+        } catch (\Exception $ex) {
+            return redirect()->back()->with("error_message", 'خطا ما الرجاءاعادة المحاولة');
+        }
+    }
+
+    //عرض صفحة تعديل ساعات التشغيل
+
+    public function Calculate_watt_time_edit_time(Request $request)
+    {
+        try {
+
+            $sum_watt = $request->input('sum_watt_warning');
+            $time = $request->input('time_warning');
+            return view('User/edit_Time', compact('sum_watt', 'time'));
+        } catch (\Exception $ex) {
+
+            return redirect()->route('notfound');
+        }
+    }
+
+    //تعديل ساعات التشغيل
+
+    public function update_time(Request $request)
+    {
+
+        try {
+
+            $sum_watt = $request->input('total-watt-edit-time');
+            $time = $request->input('time_warning_edit');
+
+            if ($time == 0) {
+
+                return redirect()->back()->with("error_null_number_message", 'الرجاء ادخال رقم');
+            } elseif ($time < 0) {
+                return redirect()->back()->with("error_minus_number_message", 'الرجاء ادخال رقم صحيح');
+            } else {
+                $watt_time = $sum_watt * $time;
+
+                if ($watt_time > 1500) {
+                    return view('User/Warning', compact('watt_time', 'sum_watt', 'time'));
+                } else if ($watt_time > 24000) {
+
+                    return redirect()->back()->with("error_max_watt_message", 'ان اقصى واط يمكن حسابه هو ٢٤٠٠٠ واط الرجاء التواصل معنا');
+                } else {
+                    return view('User/All_load', compact('watt_time'));
+                }
+            }
+        } catch (\Exception $ex) {
+            return redirect()->back()->with("error_message", 'خطا ما الرجاءاعادة المحاولة');
+        }
+    }
     //عرض صفحة الاحتمالات
 
     public function show_page_possibilities()
     {
 
-        return view('User/Possibilities');
+        try {
+
+            return view('User/Possibilities');
+        } catch (\Exception $ex) {
+            return redirect()->route('notfound');
+        }
     }
 
     //اظهار الاحتمال المناسب حسب الرقم الظاهر
@@ -98,32 +215,28 @@ class UserController extends Controller
             if ($Total_load > 0 && $Total_load <= 4000) {
 
                 return redirect()->route('show.page.possibilities')->with('one_Possibilities', 'success');
-            } 
-            elseif ($Total_load > 4000 && $Total_load <= 8000) {
+            } elseif ($Total_load > 4000 && $Total_load <= 8000) {
 
                 return redirect()->route('show.page.possibilities')->with('two_Possibilities', 'success');
-            } 
-            elseif ($Total_load > 8000 && $Total_load <= 12000) {
+            } elseif ($Total_load > 8000 && $Total_load <= 12000) {
 
                 return redirect()->route('show.page.possibilities')->with('three_Possibilities', 'success');
-            }
-             elseif ($Total_load > 12000 && $Total_load <= 16000) {
+            } elseif ($Total_load > 12000 && $Total_load <= 16000) {
 
                 return redirect()->route('show.page.possibilities')->with('fourth_Possibilities', 'success');
-            } 
-            elseif ($Total_load > 16000 && $Total_load <= 20000) {
+            } elseif ($Total_load > 16000 && $Total_load <= 20000) {
 
                 return redirect()->route('show.page.possibilities')->with('five_Possibilities', 'success');
-            } 
-            elseif ($Total_load > 20000 && $Total_load <= 24000) {
+            } elseif ($Total_load > 20000 && $Total_load <= 24000) {
 
                 return redirect()->route('show.page.possibilities')->with('six_Possibilities', 'success');
-            } 
-            elseif ($Total_load > 24000) {
+            } elseif ($Total_load > 24000) {
 
                 return redirect()->back()->with('error_max_watt_message', 'ان اقصى واط يمكن حسابه هو ٢٤٠٠٠ واط الرجاء التواصل معنا');
             }
         } catch (\Exception) {
+
+            return redirect()->route('notfound');
         }
     }
 
@@ -131,19 +244,22 @@ class UserController extends Controller
 
     public function show_page_table_system()
     {
-        return view('User/System_Table');
+        try {
+
+            return view('User/System_Table');
+        } catch (\Exception $ex) {
+            return redirect()->route('notfound');
+        }
     }
 
     //اظهار جدول المنظومات المناسبة للاحتمال الاول 
 
     public function one_table_system()
     {
-        try{
+        try {
             $one_table_system = System::whereIn('id', [1, 2])->get();
             return redirect()->route('show.page.table.system')->with(['one_table_systems' => $one_table_system, 'one_table_system' => 'success']);
-        }
-        catch(\Exception $ex)
-        {
+        } catch (\Exception $ex) {
             return redirect()->back()->with("error_message", 'خطا ما الرجاءاعادة المحاولة');
         }
     }
@@ -152,12 +268,10 @@ class UserController extends Controller
 
     public function two_table_system()
     {
-        try{
+        try {
             $two_table_system = System::whereIn('id', [1, 2, 3])->get();
             return redirect()->route('show.page.table.system')->with(['two_table_systems' => $two_table_system, 'two_table_system' => 'success']);
-        }
-        catch(\Exception $ex)
-        {
+        } catch (\Exception $ex) {
             return redirect()->back()->with("error_message", 'خطا ما الرجاءاعادة المحاولة');
         }
     }
@@ -166,12 +280,10 @@ class UserController extends Controller
 
     public function three_table_system()
     {
-        try{
+        try {
             $three_table_system = System::all();
             return redirect()->route('show.page.table.system')->with(['three_table_systems' => $three_table_system, 'three_table_system' => 'success']);
-        }
-        catch(\Exception $ex)
-        {
+        } catch (\Exception $ex) {
             return redirect()->back()->with("error_message", 'خطا ما الرجاءاعادة المحاولة');
         }
     }
@@ -179,12 +291,10 @@ class UserController extends Controller
 
     public function fourth_table_system()
     {
-        try{
+        try {
             $fourth_table_system = System::all();
             return redirect()->route('show.page.table.system')->with(['fourth_table_systems' => $fourth_table_system, 'fourth_table_system' => 'success']);
-        }
-        catch(\Exception $ex)
-        {
+        } catch (\Exception $ex) {
             return redirect()->back()->with("error_message", 'خطا ما الرجاءاعادة المحاولة');
         }
     }
@@ -193,12 +303,10 @@ class UserController extends Controller
 
     public function five_table_system()
     {
-        try{
+        try {
             $five_table_system = System::all();
             return redirect()->route('show.page.table.system')->with(['five_table_systems' => $five_table_system, 'five_table_system' => 'success']);
-        }
-        catch(\Exception $ex)
-        {
+        } catch (\Exception $ex) {
             return redirect()->back()->with("error_message", 'خطا ما الرجاءاعادة المحاولة');
         }
     }
@@ -207,14 +315,11 @@ class UserController extends Controller
 
     public function six_table_system()
     {
-        try{
+        try {
             $six_table_system = System::all();
             return redirect()->route('show.page.table.system')->with(['six_table_systems' => $six_table_system, 'six_table_system' => 'success']);
-        }
-        catch(\Exception $ex)
-        {
+        } catch (\Exception $ex) {
             return redirect()->back()->with("error_message", 'خطا ما الرجاءاعادة المحاولة');
         }
-
     }
 }

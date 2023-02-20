@@ -74,6 +74,12 @@ Route::get('/notfound', function () {
 })->name('notfound');
 Route::get('/user/calculate/watt/sum', [UserController::class, 'Calculate_Sum_Watting'])->name('calculate.watt');
 Route::get('/user/calculate/watt/time', [UserController::class, 'Calculate_watt_time'])->name('calculate.watt.time');
+Route::get('/user/calculate/watt/time/warning', [UserController::class , 'Calculate_watt_time_warning'])->name('calculate.watt.time.warning');
+Route::get('/user/calculate/watt/time/continu', [UserController::class , 'Calculate_watt_time_continu'])->name('calculate.watt.time.continu');
+Route::get('/user/calculate/watt/time/edit', [UserController::class , 'Calculate_watt_time_edit'])->name('calculate.watt.time.edit');
+Route::get('/user/calculate/watt/time/edit/time', [UserController::class , 'Calculate_watt_time_edit_time'])->name('calculate.watt.time.edit.time');
+Route::get('/user/update/loads', [UserController::class , 'update_loads'])->name('update.loads');
+Route::get('/user/update/time', [UserController::class , 'update_time'])->name('update.time');
 Route::get('/user/show/possibilities', [UserController::class, 'show_page_possibilities'])->name('show.page.possibilities');
 Route::get('/user/show/TableSystem', [UserController::class, 'show_page_table_system'])->name('show.page.table.system');
 Route::get('/user/possibilities', [UserController::class, 'show_possibilities'])->name('show.possibilities');

@@ -9,7 +9,15 @@ class AdminController extends Controller
 {
     public function index()
     {
-        return view('Admin/index');
+        try{
+ 
+            return view('Admin/index');
+            
+        }catch(\Exception $ex)
+        {
+            return redirect()->route('notfound');
+        }
+    
     }
 
    

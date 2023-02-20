@@ -33,9 +33,11 @@
                                         value="{{ $load->value }}">
                                     <label for="validationDefault01" class="form-label">{{ $load->name }}</label>
                                     <br>
+                                 
                                     <input style="direction: rtl" type="number" class="form-group"
                                         name="value[{{ $load->id }}]" value="{{ $load->value }}" min="20"
                                         max="3000.00000000000000">
+                                   
                                 </div>
                                 <br>
                             @endforeach
