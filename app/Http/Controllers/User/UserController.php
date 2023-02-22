@@ -19,7 +19,7 @@ class UserController extends Controller
             $loads = Loads::all();
             return view('welcome', ['loads' => $loads]);
         } catch (\Exception $ex) {
-            return redirect()->back()->with('error_message', 'خطا ما الرجاءاعادة المحاولة');
+            return redirect()->route('notfound');
         }
     }
 
