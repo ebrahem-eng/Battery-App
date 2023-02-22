@@ -74,21 +74,49 @@ Route::get('/notfound', function () {
 })->name('notfound');
 Route::get('/user/calculate/watt/sum', [UserController::class, 'Calculate_Sum_Watting'])->name('calculate.watt');
 Route::get('/user/calculate/watt/time', [UserController::class, 'Calculate_watt_time'])->name('calculate.watt.time');
-Route::get('/user/calculate/watt/time/warning', [UserController::class , 'Calculate_watt_time_warning'])->name('calculate.watt.time.warning');
-Route::get('/user/calculate/watt/time/continu', [UserController::class , 'Calculate_watt_time_continu'])->name('calculate.watt.time.continu');
-Route::get('/user/calculate/watt/time/edit', [UserController::class , 'Calculate_watt_time_edit'])->name('calculate.watt.time.edit');
-Route::get('/user/calculate/watt/time/edit/time', [UserController::class , 'Calculate_watt_time_edit_time'])->name('calculate.watt.time.edit.time');
-Route::get('/user/update/loads', [UserController::class , 'update_loads'])->name('update.loads');
-Route::get('/user/update/time', [UserController::class , 'update_time'])->name('update.time');
+Route::get('/user/calculate/watt/time/warning', [UserController::class, 'Calculate_watt_time_warning'])->name('calculate.watt.time.warning');
+Route::get('/user/calculate/watt/time/continu', [UserController::class, 'Calculate_watt_time_continu'])->name('calculate.watt.time.continu');
+Route::get('/user/calculate/watt/time/edit', [UserController::class, 'Calculate_watt_time_edit'])->name('calculate.watt.time.edit');
+Route::get('/user/calculate/watt/time/edit/time', [UserController::class, 'Calculate_watt_time_edit_time'])->name('calculate.watt.time.edit.time');
+Route::get('/user/update/loads', [UserController::class, 'update_loads'])->name('update.loads');
+Route::get('/user/update/time', [UserController::class, 'update_time'])->name('update.time');
 Route::get('/user/show/possibilities', [UserController::class, 'show_page_possibilities'])->name('show.page.possibilities');
 Route::get('/user/show/TableSystem', [UserController::class, 'show_page_table_system'])->name('show.page.table.system');
 Route::get('/user/possibilities', [UserController::class, 'show_possibilities'])->name('show.possibilities');
-Route::get('/user/one/TableSystem', [UserController::class, 'one_table_system'])->name('one_table.system');
-Route::get('/user/two/TableSystem', [UserController::class, 'two_table_system'])->name('two_table.system');
-Route::get('/user/three/TableSystem', [UserController::class, 'three_table_system'])->name('three_table.system');
-Route::get('/user/fourth/TableSystem', [UserController::class, 'fourth_table_system'])->name('fourth_table.system');
-Route::get('/user/five/TableSystem', [UserController::class, 'five_table_system'])->name('five_table.system');
-Route::get('/user/six/TableSystem', [UserController::class, 'six_table_system'])->name('six_table.system');
+// Route::get('/user/one/TableSystem', [UserController::class, 'one_table_system'])->name('one_table.system');
+// Route::get('/user/two/TableSystem', [UserController::class, 'two_table_system'])->name('two_table.system');
+// Route::get('/user/three/TableSystem', [UserController::class, 'three_table_system'])->name('three_table.system');
+// Route::get('/user/fourth/TableSystem', [UserController::class, 'fourth_table_system'])->name('fourth_table.system');
+// Route::get('/user/five/TableSystem', [UserController::class, 'five_table_system'])->name('five_table.system');
+// Route::get('/user/six/TableSystem', [UserController::class, 'six_table_system'])->name('six_table.system');
+
+
+Route::get('/user/details/system', [UserController::class, 'show_page_details_system'])->name('show.page.details.system');
+Route::get('/user/details/system/one/one', [UserController::class, 'one_possibilities_one_choice'])->name('one.possibilities.one.choice');
+Route::get('/user/details/system/one/two', [UserController::class, 'one_possibilities_two_choice'])->name('one.possibilities.two.choice');
+
+Route::get('/user/details/system/two/one', [UserController::class, 'two_possibilities_one_choice'])->name('two.possibilities.one.choice');
+Route::get('/user/details/system/two/two', [UserController::class, 'two_possibilities_two_choice'])->name('two.possibilities.two.choice');
+Route::get('/user/details/system/two/three', [UserController::class, 'two_possibilities_three_choice'])->name('two.possibilities.three.choice');
+Route::get('/user/details/system/two/four', [UserController::class, 'two_possibilities_four_choice'])->name('two.possibilities.four.choice');
+
+Route::get('/user/details/system/three/one', [UserController::class, 'three_possibilities_one_choice'])->name('three.possibilities.one.choice');
+Route::get('/user/details/system/three/two', [UserController::class, 'three_possibilities_two_choice'])->name('three.possibilities.two.choice');
+Route::get('/user/details/system/three/three', [UserController::class, 'three_possibilities_three_choice'])->name('three.possibilities.three.choice');
+Route::get('/user/details/system/three/four', [UserController::class, 'three_possibilities_four_choice'])->name('three.possibilities.four.choice');
+Route::get('/user/details/system/three/five', [UserController::class, 'three_possibilities_five_choice'])->name('three.possibilities.five.choice');
+Route::get('/user/details/system/three/six', [UserController::class, 'three_possibilities_six_choice'])->name('three.possibilities.six.choice');
+Route::get('/user/details/system/three/seven', [UserController::class, 'three_possibilities_seven_choice'])->name('three.possibilities.seven.choice');
+
+Route::get('/user/details/system/four/one', [UserController::class, 'four_possibilities_one_choice'])->name('four.possibilities.one.choice');
+Route::get('/user/details/system/four/two', [UserController::class, 'four_possibilities_two_choice'])->name('four.possibilities.two.choice');
+Route::get('/user/details/system/four/three', [UserController::class, 'four_possibilities_three_choice'])->name('four.possibilities.three.choice');
+
+Route::get('/user/details/system/five/one', [UserController::class, 'five_possibilities_one_choice'])->name('five.possibilities.one.choice');
+Route::get('/user/details/system/five/two', [UserController::class, 'five_possibilities_two_choice'])->name('five.possibilities.two.choice');
+
+Route::get('/user/details/system/six/two', [UserController::class, 'six_possibilities_two_choice'])->name('six.possibilities.two.choice');
+Route::get('/user/details/system/six/three', [UserController::class, 'six_possibilities_three_choice'])->name('six.possibilities.three.choice');
 //<================== end user section ===============>
 
 
