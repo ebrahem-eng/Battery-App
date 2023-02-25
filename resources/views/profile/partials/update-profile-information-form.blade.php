@@ -7,13 +7,35 @@
 
                     </header>
 
+                    <!--  error section -->
+                    @if (session('update_error_message'))
+                        <div class="alert alert-danger alert-dismissible bg-danger text-white border-0 fade show"
+                            id="success-alert" role="alert">
+                            {{ session('update_error_message') }}
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    @endif
+
+                    @if (session('update_success_message'))
+                        <div class="alert alert-success alert-dismissible bg-success text-white border-0 fade show"
+                            id="success-alert" role="alert">
+                            {{ session('update_success_message') }}
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    @endif
+                    <!-- end error section -->
+
                     <form id="send-verification" method="post" action="{{ route('verification.send') }}">
                         @csrf
                     </form>
 
-                    <form class="justify-content-center" method="post" action="{{ route('profile.update') }}">
+                    <form class="justify-content-center" method="post" action="{{ route('admin.profile.update' , $user->id) }}">
                         @csrf
-                        @method('patch')
+                        @method('put')
 
                         <div class="card-body">
                             <h5 class="card-title ">معلومات الملف الشخصي:</h5>
@@ -22,7 +44,7 @@
                                 <label for="name" class="form-label">الاسم:</label>
                                 <br>
                                 <input type="text" class="form-group" name="name"
-                                    value="{{ auth()->user()->name }}" readonly>
+                                    value="{{ auth()->user()->name }}">
                                 <x-input-error class="mt-2" :messages="$errors->get('name')" />
                             </div>
                             <br>
@@ -54,6 +76,10 @@
                                         @endif
                                     </div>
                                 @endif
+
+                                <div class="col-12 d-flex ">
+                                    <button class="btn btn-primary mt-5" type="submit">تحديث الاسم</button>
+                                </div>
                             </div>
 
                             <div class="flex items-center gap-4">

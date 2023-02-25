@@ -71,6 +71,10 @@ Route::middleware(['auth', 'verified'])->prefix('admin')->group(function () {
      Route::get('/userinformation/restore/{id}', [User_InformationController::class, 'restore'])->name('admin.restore.user.information')->middleware(['permission:استعادة معلومات زبون']);
      Route::delete('/userinformation/force/delete/{id}', [User_InformationController::class, 'force_delete'])->name('admin.forcedelete.user.information')->middleware(['permission:حذف معلومات زبون بشكل نهائي']);
 
+     //<========== profile route section ============>
+
+     Route::put('/profile/update/{user}', [AdminController::class , 'admin_profile_update'])->name('admin.profile.update');
+    
 
 });
 //<================== end admin section ============>
