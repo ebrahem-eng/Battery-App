@@ -289,89 +289,6 @@ class UserController extends Controller
         }
     }
 
-    // //اظهار صفحة جدول المنظومات المناسبة 
-
-    // public function show_page_table_system()
-    // {
-    //     try {
-
-    //         return view('User/System_Table');
-    //     } catch (\Exception $ex) {
-    //         return redirect()->route('notfound');
-    //     }
-    // }
-
-    // //اظهار جدول المنظومات المناسبة للاحتمال الاول 
-
-    // public function one_table_system()
-    // {
-    //     try {
-    //         $one_table_system = System::whereIn('id', [1, 2])->get();
-    //         return redirect()->route('show.page.table.system')->with(['one_table_systems' => $one_table_system, 'one_table_system' => 'success']);
-    //     } catch (\Exception $ex) {
-    //         return redirect()->back()->with("error_message", 'خطا ما الرجاءاعادة المحاولة');
-    //     }
-    // }
-
-    // //اظهار جدول المنظومات المناسبة للاحتمال الثاني
-
-    // public function two_table_system()
-    // {
-    //     try {
-    //         $two_table_system = System::whereIn('id', [1, 2, 3])->get();
-    //         return redirect()->route('show.page.table.system')->with(['two_table_systems' => $two_table_system, 'two_table_system' => 'success']);
-    //     } catch (\Exception $ex) {
-    //         return redirect()->back()->with("error_message", 'خطا ما الرجاءاعادة المحاولة');
-    //     }
-    // }
-
-    // //اظهار جدول المنظومات المناسبة للاحتمال الثالث
-
-    // public function three_table_system()
-    // {
-    //     try {
-    //         $three_table_system = System::all();
-    //         return redirect()->route('show.page.table.system')->with(['three_table_systems' => $three_table_system, 'three_table_system' => 'success']);
-    //     } catch (\Exception $ex) {
-    //         return redirect()->back()->with("error_message", 'خطا ما الرجاءاعادة المحاولة');
-    //     }
-    // }
-    // //اظهار جدول المنظومات المناسبة للاحتمال الرابع
-
-    // public function fourth_table_system()
-    // {
-    //     try {
-    //         $fourth_table_system = System::all();
-    //         return redirect()->route('show.page.table.system')->with(['fourth_table_systems' => $fourth_table_system, 'fourth_table_system' => 'success']);
-    //     } catch (\Exception $ex) {
-    //         return redirect()->back()->with("error_message", 'خطا ما الرجاءاعادة المحاولة');
-    //     }
-    // }
-
-    // //اظهار جدول المنظومات المناسبة للاحتمال الخامس
-
-    // public function five_table_system()
-    // {
-    //     try {
-    //         $five_table_system = System::all();
-    //         return redirect()->route('show.page.table.system')->with(['five_table_systems' => $five_table_system, 'five_table_system' => 'success']);
-    //     } catch (\Exception $ex) {
-    //         return redirect()->back()->with("error_message", 'خطا ما الرجاءاعادة المحاولة');
-    //     }
-    // }
-
-    // //اظهار جدول المنظومات المناسبة للاحتمال السادس
-
-    // public function six_table_system()
-    // {
-    //     try {
-    //         $six_table_system = System::all();
-    //         return redirect()->route('show.page.table.system')->with(['six_table_systems' => $six_table_system, 'six_table_system' => 'success']);
-    //     } catch (\Exception $ex) {
-    //         return redirect()->back()->with("error_message", 'خطا ما الرجاءاعادة المحاولة');
-    //     }
-    // }
-
     //عرض صفحة تفاصيل الاقتراحات
     public function show_page_details_system()
     {
@@ -500,17 +417,6 @@ class UserController extends Controller
     public function three_possibilities_four_choice()
     {
         try {
-            $one_possibilities_one_choice = System::where('name', 'المنظومة الاولى')->get();
-            return redirect()->route('show.page.details.system')->with(['one_possibilities_one_choice' => $one_possibilities_one_choice, 'status' => 'success']);
-        } catch (\Exception $ex) {
-            return redirect()->route('notfound');
-        }
-    }
-
-    //الاقتراح الخامس من الاحتمال الثالث
-    public function three_possibilities_five_choice()
-    {
-        try {
             $one_possibilities_two_choice = System::where('name', 'المنظومة الثانية')->get();
             return redirect()->route('show.page.details.system')->with(['one_possibilities_two_choice' => $one_possibilities_two_choice, 'status' => 'success']);
         } catch (\Exception $ex) {
@@ -518,29 +424,6 @@ class UserController extends Controller
         }
     }
 
-    //الاقتراح السادس من الاحتمال الثالث 
-
-    public function three_possibilities_six_choice()
-    {
-        try {
-            $two_possibilities_four_choice = System::whereIn('name', ['المنظومة الثانية', 'المنظومة الاولى'])->get();
-            return redirect()->route('show.page.details.system')->with(['two_possibilities_four_choice' => $two_possibilities_four_choice, 'status' => 'success']);
-        } catch (\Exception $ex) {
-            return redirect()->route('notfound');
-        }
-    }
-
-    //الاقتراح السابع من الاحتمال الثالث
-
-    public function three_possibilities_seven_choice()
-    {
-        try {
-            $two_possibilities_four_choice = System::whereIn('name', ['المنظومة الثانية', 'المنظومة الاولى'])->get();
-            return redirect()->route('show.page.details.system')->with(['two_possibilities_four_choice' => $two_possibilities_four_choice, 'status' => 'success']);
-        } catch (\Exception $ex) {
-            return redirect()->route('notfound');
-        }
-    }
 
     //الاقتراح الاول من الاحتمال الرابع
     public function four_possibilities_one_choice()

@@ -37,7 +37,6 @@
                         <form class="justify-content-center" action="{{ route('calculate.watt') }}" method="get">
                             @csrf
                             @foreach ($loads as $load)
-             
                                 <div class="form-body">
                                     <div class="row">
                                         <div class="col-md-5">
@@ -62,9 +61,6 @@
                                                 max="10" min="1">
                                         </div>
                                     </div>
-
-
-
                                     <br>
                             @endforeach
                             <div class="col-12 d-flex justify-content-center">

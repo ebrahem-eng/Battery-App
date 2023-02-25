@@ -95,12 +95,7 @@ Route::get('/user/show/TableSystem', [UserController::class, 'show_page_table_sy
 Route::get('/user/possibilities', [UserController::class, 'show_possibilities'])->name('show.possibilities');
 Route::get('/user/details/create', [UserController::class , 'show_user_details'])->name('show.user.details');
 Route::post('/user/details/store', [UserController::class , 'store_user_details'])->name('store.user.details');
-// Route::get('/user/one/TableSystem', [UserController::class, 'one_table_system'])->name('one_table.system');
-// Route::get('/user/two/TableSystem', [UserController::class, 'two_table_system'])->name('two_table.system');
-// Route::get('/user/three/TableSystem', [UserController::class, 'three_table_system'])->name('three_table.system');
-// Route::get('/user/fourth/TableSystem', [UserController::class, 'fourth_table_system'])->name('fourth_table.system');
-// Route::get('/user/five/TableSystem', [UserController::class, 'five_table_system'])->name('five_table.system');
-// Route::get('/user/six/TableSystem', [UserController::class, 'six_table_system'])->name('six_table.system');
+
 
 
 Route::get('/user/details/system', [UserController::class, 'show_page_details_system'])->name('show.page.details.system');
@@ -116,9 +111,7 @@ Route::get('/user/details/system/three/one', [UserController::class, 'three_poss
 Route::get('/user/details/system/three/two', [UserController::class, 'three_possibilities_two_choice'])->name('three.possibilities.two.choice');
 Route::get('/user/details/system/three/three', [UserController::class, 'three_possibilities_three_choice'])->name('three.possibilities.three.choice');
 Route::get('/user/details/system/three/four', [UserController::class, 'three_possibilities_four_choice'])->name('three.possibilities.four.choice');
-Route::get('/user/details/system/three/five', [UserController::class, 'three_possibilities_five_choice'])->name('three.possibilities.five.choice');
-Route::get('/user/details/system/three/six', [UserController::class, 'three_possibilities_six_choice'])->name('three.possibilities.six.choice');
-Route::get('/user/details/system/three/seven', [UserController::class, 'three_possibilities_seven_choice'])->name('three.possibilities.seven.choice');
+
 
 Route::get('/user/details/system/four/one', [UserController::class, 'four_possibilities_one_choice'])->name('four.possibilities.one.choice');
 Route::get('/user/details/system/four/two', [UserController::class, 'four_possibilities_two_choice'])->name('four.possibilities.two.choice');

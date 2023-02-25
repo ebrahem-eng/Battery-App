@@ -55,7 +55,7 @@
                             @csrf
                             <div class="form-body">
                                 <div class="row">
-                                    <div class="col-md-5">
+                                    <div class="col-8 col-md-5">
                                         <div class="form-group">
                                             <label class="form-label">مجموع الاحمال:</label>
                                             <input style="direction: rtl" type="number" class="form-control"
@@ -66,7 +66,7 @@
                                 </div>
                                 <br>
                                 <div class="row">
-                                    <div class="col-md-5">
+                                    <div class="col-8 col-md-5">
                                         <div class="form-group">
                                             <label class="form-label">الوقت المقدر للتشغيل:</label>
                                             <input style="direction: rtl" type="number" class="form-control"
@@ -80,10 +80,7 @@
                             <div class="col-12 d-flex justify-content-center">
                                 <button class="btn btn-primary mt-3" type="submit">حساب</button>
                             </div>
-                            {{-- <div class="col-12 d-flex justify-content-center mt-2 ">
-                        <a class="btn btn-primary " type="button" href="{{ url('/') }}">رجوع</a>
-                    </div> --}}
-
+                      
                         </form>
 
                     </div>
