@@ -83,6 +83,26 @@
                                 </div>
                                 <br>
                                 <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="form-label">السعر رقما:</label>
+                                            <input style="direction: rtl" type="number" class="form-control"
+                                                placeholder="20000000" name="price_number" required
+                                                value="{{ $systems->price_number }}">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="form-label">السعر كتابة:</label>
+                                            <input style="direction: rtl" type="text" class="form-control"
+                                            placeholder="عشرون مليون ليرة سورية" name="price_write" required
+                                                value="{{ $systems->price_write }}">
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row">
                                     <div class="col-md-7">
                                         <div class="form-group">
                                             <label class="form-label">تفاصيل اخرى:</label>

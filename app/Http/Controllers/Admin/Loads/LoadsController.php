@@ -39,6 +39,7 @@ class LoadsController extends Controller
             Loads::create([
                 'name' => $request->name,
                 'value' => $request->value,
+                'number' => $request->number,
             ]);
             return redirect()->route('admin.show.loads')->with('store_success_message', 'تم اضافة الحمل بنجاح');
         } catch (\Exception $ex) {
@@ -115,6 +116,7 @@ class LoadsController extends Controller
             $loads->update([
                 'name' => $request->name,
                 'value' => $request->value,
+                'number' => $request->number,
             ]);
             return redirect()->route('admin.show.loads')->with('update_success_message', 'تم تحديث بيانات الحمل بنجاح');
         } catch (\Exception $ex) {

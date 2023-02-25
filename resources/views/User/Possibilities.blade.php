@@ -94,26 +94,26 @@
                                 <span for="validationDefault01" class="form-label">3- تركيب منظومة واحدة من المنظومة
                                     الرابعة</span></a>
 
-                            <br>
+                            {{-- <br>
                             <a href="{{ route('three.possibilities.four.choice') }}">
                                 <span for="validationDefault01" class="form-label">4- تركيب ثلاث منظومات من المنظومة
-                                    الاولى</span></a>
+                                    الاولى</span></a> --}}
 
                             <br>
                             <a href="{{ route('three.possibilities.five.choice') }}">
-                                <span for="validationDefault01" class="form-label">5- تركيب ثلاث منظومات من المنظومة
+                                <span for="validationDefault01" class="form-label">4- تركيب ثلاث منظومات من المنظومة
                                     الثانية</span></a>
 
                             <br>
 
-                            <a href="{{ route('three.possibilities.six.choice') }}">
+                            {{-- <a href="{{ route('three.possibilities.six.choice') }}">
                                 <span for="validationDefault01" class="form-label">6- تركيب منظومتان من المنظومة الثانية
                                     ومنظومة واحدة من المنظومة الاولى</span></a>
 
                             <br>
                             <a href="{{ route('three.possibilities.seven.choice') }}">
                                 <span for="validationDefault01" class="form-label">7- تركيب منظومتان من المنظومة الاولى
-                                    ومنظومة واحدة من المنظومة الثانية</span>
+                                    ومنظومة واحدة من المنظومة الثانية</span> --}}
                                 {{-- 
                             <div class="col-12 d-flex justify-content-center">
                                 <a class="btn btn-primary " type="button"
@@ -145,7 +145,7 @@
                                     الثالثة</span></a>
 
                             <br>
-                            <a href="{{ route('two.possibilities.four.choice') }}">
+                            {{-- <a href="{{ route('two.possibilities.four.choice') }}">
                                 <span for="validationDefault01" class="form-label">5- تركيب منظومتان من المنظومة الاولى
                                     مع
                                     منظومتان من المنظومة الثانية</span></a>
@@ -184,7 +184,7 @@
                             <a href="{{ route('two.possibilities.four.choice') }}">
                                 <span for="validationDefault01" class="form-label">12- تركيب منظومتان من المنظومة الاولى
                                     مع
-                                    منظومتان من المنظومة الثانية</span></a>
+                                    منظومتان من المنظومة الثانية</span></a> --}}
 
                             {{-- <div class="col-12 d-flex justify-content-center">
                                 <a class="btn btn-primary " type="button"
@@ -227,7 +227,7 @@
                                     منظومة من المنظومة الاولى</span></a>
 
                             <br>
-                            <a href="{{ route('three.possibilities.two.choice') }}">
+                            {{-- <a href="{{ route('three.possibilities.two.choice') }}">
                                 <span for="validationDefault01" class="form-label">6- تركيب منظومتان من المنظومة
                                     الثالثة
                                     مع منظومة من المنظومة الثانية</span></a>
@@ -272,7 +272,7 @@
                             <a href="{{ route('two.possibilities.four.choice') }}">
                                 <span for="validationDefault01" class="form-label">14- تركيب منظومتان من المنظومة
                                     الثانية
-                                    مع ثلاث منظومات من المنظومة الاولى</span></a>
+                                    مع ثلاث منظومات من المنظومة الاولى</span></a> --}}
 
                             {{-- <div class="col-12 d-flex justify-content-center">
                                 <a class="btn btn-primary " type="button"
@@ -300,7 +300,7 @@
                                     الثالثة مع المنظومة الثانية</span></a>
 
                             <br>
-                            <a href="{{ route('one.possibilities.one.choice') }}">
+                            {{-- <a href="{{ route('one.possibilities.one.choice') }}">
                                 <span for="validationDefault01" class="form-label">4- تركيب ست منظومات من المنظومة
                                     الاولى</span></a>
 
@@ -386,7 +386,7 @@
                             <a href="{{ route('five.possibilities.two.choice') }}">
                                 <span for="validationDefault01" class="form-label">19- تركيب منظومة من المنظومة
                                     الرابعة
-                                    مع منظومتان من المنظومة الثانية ومنظومة من المنظومة الاولى</span></a>
+                                    مع منظومتان من المنظومة الثانية ومنظومة من المنظومة الاولى</span></a> --}}
 
                             {{-- 
                             <div class="col-12 d-flex justify-content-center">

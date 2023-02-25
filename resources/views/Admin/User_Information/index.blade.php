@@ -1,14 +1,14 @@
 @extends('Admin.empty')
-@section('title', 'ادارة المنظومات')
+@section('title', 'معلومات الزبائن')
 
 <main id="main" class="main" dir="rtl">
     <div class="pagetitle">
-        <h1>جدول المنظومات</h1>
+        <h1>جدول معلومات الزبائن</h1>
         <nav>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{ route('admin.index') }}">الرئيسية</a></li>
-                <li class="breadcrumb-item ">المنظومات</li>
-                <li class="breadcrumb-item active">استعراض المنظومات</li>
+                <li class="breadcrumb-item ">معلومات الزبائن</li>
+                <li class="breadcrumb-item active">استعراض معلومات الزبائن</li>
             </ol>
         </nav>
     </div>
@@ -70,53 +70,36 @@
 
                     <div class="card-body">
                         <div class="card-title">
-                            <a type="button" href="{{ route('admin.create.systems') }}">
-                                <i class="bi bi-plus-square"></i>
-                            </a>
+                         
                         </div>
-                        @if(count($systems)>0)
+                        @if(count($users)>0)
                         <div style="overflow-x:auto;">
                             <table class="table datatable">
                                 <thead>
                                     <tr>
                                         <th scope="col">#</th>
-                                        <th scope="col">الاسم</th>
-                                        <th scope="col">عدد البطاريات </th>
-                                        <th scope="col">عدد الانفيرترات</th>
-                                        <th scope="col">استطاعة الانفيرتر</th>
-                                        <th scope="col">استطاعة البطارية</th>
-                                        <th scope="col">عدد ساعات الشحن</th>
-                                        <th scope="col">السعر رقما</th>
-                                        <th scope="col">السعر كتابة</th>
-                                        <th scope="col">نفاصيل اخرى</th>
-                                        <th scope="col"></th>
+                                        <th scope="col">الاسم الكامل</th>
+                                        <th scope="col">البريد الالكتروني</th>
+                                        <th scope="col">رقم الموبايل</th>
+                                        <th scope="col">مكان السكن</th>
+                                        <th scope="col">الملاحظات</th>
+                                        <th scope="col">تاريخ ادخال المعلومات</th>
                                         <th scope="col"></th>
 
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($systems as $system)
+                                    @foreach ($users as $user)
                                         <tr style="font-size: 22px">
-                                            <th scope="row">{{ $system->id }}</th>
-                                            <td>{{ $system->name }}</td>
-                                            <td>{{ $system->number_battery }}</td>
-                                            <td>{{ $system->number_inverters }}</td>
-                                            <td>{{ $system->watt_inverters }}</td>
-                                            <td>{{ $system->watt_battery }}</td>
-                                            <td>{{ $system->Number_hours_for_charge }}</td>
-                                            <td>{{ $system->price_number }}</td>
-                                            <td>{{ $system->price_write }}</td>
-                                            <td>{{ $system->details }}</td>
-
-                                            <td class="text-center">
-                                                <a type="button"
-                                                    href="{{ route('admin.edit.systems', $system->id) }}">
-                                                    <i class="bi bi-pencil-square fs-6"></i>
-                                                </a>
-                                            </td>
-
+                                            <th scope="row">{{ $user->id }}</th>
+                                            <td>{{ $user->name }}</td>
+                                            <td>{{ $user->email }}</td>
+                                            <td>{{ $user->phone }}</td>
+                                            <td>{{ $user->address }}</td>
+                                            <td>{{ $user->note }}</td>
+                                            <td>{{ $user->created_at }}</td>
                                             <td>
-                                                <form action="{{ route('admin.softdelete.systems', $system->id) }}"
+                                                <form action="{{ route('admin.softdelete.user.information', $user->id) }}"
                                                     method="POST">
                                                     @csrf
                                                     @method('delete')

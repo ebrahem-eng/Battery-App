@@ -77,6 +77,7 @@
                                             <th scope="col">#</th>
                                             <th scope="col">الاسم</th>
                                             <th scope="col">القيمة الافتراضية</th>
+                                            <th scope="col">العدد الافتراضي</th>
                                             <th scope="col"></th>
                                             <th scope="col"></th>
 
@@ -88,6 +89,7 @@
                                                 <th scope="row">{{ $load->id }}</th>
                                                 <td>{{ $load->name }}</td>
                                                 <td>{{ $load->value }}</td>
+                                                <td>{{ $load->number }}</td>
                                                 <td class="text-center"><a
                                                         href="{{ route('admin.edit.loads', $load->id) }}"><i
                                                             class="bi bi-pencil-square fs-6"></i></a></td>

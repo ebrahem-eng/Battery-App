@@ -45,6 +45,8 @@ class SystemController extends Controller
                 'watt_inverters' => $request->watt_inverters,
                 'watt_battery' => $request->watt_battery,
                 'Number_hours_for_charge' => $request->Number_hours_for_charge,
+                'price_number' => $request->price_number,
+                'price_write' => $request->price_write,
                 'details' => $request->details,
             ]);
             return redirect()->route('admin.show.systems')->with('store_success_message', 'تم اضافة المنظومة بنجاح');
@@ -78,6 +80,8 @@ class SystemController extends Controller
                 'watt_inverters' => $request->watt_inverters,
                 'watt_battery' => $request->watt_battery,
                 'Number_hours_for_charge' => $request->Number_hours_for_charge,
+                'price_number' => $request->price_number,
+                'price_write' => $request->price_write,
                 'details' => $request->details,
             ]);
             return redirect()->route('admin.show.systems')->with('update_success_message', 'تم تحديث بيانات المنظومة بنجاح');

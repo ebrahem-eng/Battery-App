@@ -21,6 +21,8 @@ return new class extends Migration
             $table->integer('watt_battery');
             $table->integer('watt_inverters');
             $table->string('Number_hours_for_charge');
+            $table->integer('price_number');
+            $table->string('price_write');
             $table->string('details');
             $table->softDeletes();
             $table->timestamps();

@@ -1,14 +1,13 @@
 @extends('Admin.empty')
-@section('title', 'ارشيف الاحمال')
+@section('title', 'ارشيف معلومات الزبائن')
 <main id="main" class="main" dir="rtl">
-
     <div class="pagetitle">
-        <h1>جدول ارشيف الاحمال</h1>
+        <h1>جدول ارشيف معلومات الزبائن</h1>
         <nav>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{ route('admin.index') }}">الرئيسية</a></li>
-                <li class="breadcrumb-item ">ادارة الاحمال</li>
-                <li class="breadcrumb-item active">ارشيف الاحمال</li>
+                <li class="breadcrumb-item ">معلومات الزبائن</li>
+                <li class="breadcrumb-item active">ارشيف معلومات الزبائن</li>
             </ol>
         </nav>
     </div>
@@ -21,6 +20,7 @@
                 <div class="card">
 
                     <!--  error section -->
+                    <!-- Include jQuery and Bootstrap JS libraries -->
 
                     @if (session('delete_success_message'))
                         <div class="alert alert-success alert-dismissible bg-success text-white border-0 fade show"
@@ -32,6 +32,8 @@
                         </div>
                     @endif
 
+
+
                     @if (session('delete_error_message'))
                         <div class="alert alert-danger alert-dismissible bg-danger text-white border-0 fade show"
                             id="success-alert" role="alert">
@@ -41,7 +43,6 @@
                             </button>
                         </div>
                     @endif
-
 
                     @if (session('restore_success_message'))
                         <div class="alert alert-success alert-dismissible bg-success text-white border-0 fade show"
@@ -66,37 +67,48 @@
 
                     <div class="card-body">
                         <div class="card-title">
+
                         </div>
-                        @if (count($loads_trashed) > 0)
+                        @if (count($users) > 0)
                             <div style="overflow-x:auto;">
                                 <table class="table datatable">
                                     <thead>
                                         <tr>
                                             <th scope="col">#</th>
-                                            <th scope="col">الاسم</th>
-                                            <th scope="col">القيمة الافتراضية</th>
-                                            <th scope="col">العدد الافتراضي</th>
+                                            <th scope="col">الاسم الكامل</th>
+                                            <th scope="col">البريد الالكتروني</th>
+                                            <th scope="col">رقم الموبايل</th>
+                                            <th scope="col">مكان السكن</th>
+                                            <th scope="col">الملاحظات</th>
+                                            <th scope="col">تاريخ ادخال المعلومات</th>
                                             <th scope="col">تاريخ الحذف</th>
                                             <th scope="col"></th>
                                             <th scope="col"></th>
 
                                         </tr>
-
                                     </thead>
-
                                     <tbody>
-                                        @foreach ($loads_trashed as $load)
+                                        @foreach ($users as $user)
                                             <tr style="font-size: 22px">
-                                                <th scope="row">{{ $load->id }}</th>
-                                                <td>{{ $load->name }}</td>
-                                                <td>{{ $load->value }}</td>
-                                                <td>{{ $load->number }}</td>
-                                                <td>{{ $load->deleted_at }}</td>
-                                                <td class="text-center"><a
-                                                        href="{{ route('admin.restore.loads', $load->id) }}">
-                                                        <i class="bi bi-arrow-clockwise"></i></a></td>
+                                                <th scope="row">{{ $user->id }}</th>
+                                                <td>{{ $user->name }}</td>
+                                                <td>{{ $user->email }}</td>
+                                                <td>{{ $user->phone }}</td>
+                                                <td>{{ $user->address }}</td>
+                                                <td>{{ $user->note }}</td>
+                                                <td>{{ $user->created_at }}</td>
+                                                <td>{{ $user->deleted_at }}</td>
+
+                                                <td class="text-center">
+                                                    <a type="button"
+                                                        href="{{ route('admin.restore.user.information', $user->id) }}">
+                                                        <i class="bi bi-arrow-clockwise"></i>
+                                                    </a>
+                                                </td>
+
                                                 <td>
-                                                    <form action="{{ route('admin.forcedelete.loads', $load->id) }}"
+                                                    <form
+                                                        action="{{ route('admin.forcedelete.user.information', $user->id) }}"
                                                         method="POST">
                                                         @csrf
                                                         @method('delete')
@@ -117,14 +129,14 @@
                                         </div>
                         @endif
                         </tbody>
+
                         </table>
                     </div>
                 </div>
             </div>
         </div>
 
-        </div>
-        </div>
+
     </section>
 
 </main>

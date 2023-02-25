@@ -79,6 +79,26 @@
                                 </div>
                                 <br>
                                 <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="form-label">السعر رقما:</label>
+                                            <input style="direction: rtl" type="number" class="form-control"
+                                                placeholder="200000" name="price_number" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="form-label">السعر كتابة:</label>
+                                            <input style="direction: rtl" type="text" class="form-control"
+                                                placeholder="عشرون مليون ليرة سورية" name="price_write" required>
+                                        </div>
+                                    </div>
+
+                                  
+                                </div>
+                                <br>
+                                <div class="row">
                                     <div class="col-md-7">
                                         <div class="form-group">
                                             <label class="form-label">تفاصيل اخرى:</label>

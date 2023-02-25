@@ -16,6 +16,8 @@ class System extends Model
         'watt_battery',
         'watt_inverters',
         'Number_hours_for_charge',
+        'price_number',
+        'price_write',
         'details',
     ];
 }

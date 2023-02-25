@@ -43,6 +43,16 @@ class PermissionSeeder extends Seeder
 
         Permission::create(['name'=>'حذف منظومة بشكل نهائي']);
 
+        Permission::create(['name'=>'استعراض معلومات الزبائن']);
+
+        Permission::create(['name'=>'حذف معلومات الزبائن']);
+
+        Permission::create(['name'=>'ارشيف معلومات الزبائن']);
+
+        Permission::create(['name'=>'استعادة معلومات زبون']);
+
+        Permission::create(['name'=>'حذف معلومات زبون بشكل نهائي']);
+
         Permission::create(['name'=>'استعراض المسؤولين']);
 
         Permission::create(['name'=>'اضافة مسؤول']);

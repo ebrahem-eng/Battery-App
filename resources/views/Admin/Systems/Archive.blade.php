@@ -81,6 +81,8 @@
                                         <th scope="col">استطاعة الانفيرتر</th>
                                         <th scope="col">استطاعة البطارية</th>
                                         <th scope="col">عدد ساعات الشحن</th>
+                                        <th scope="col">السعر رقما</th>
+                                        <th scope="col">السعر كتابة</th>
                                         <th scope="col">نفاصيل اخرى</th>
                                         <th scope="col">تاريخ الحذف</th>
                                         <th scope="col"></th>
@@ -99,6 +101,8 @@
                                             <td>{{ $system->watt_inverters }}</td>
                                             <td>{{ $system->watt_battery }}</td>
                                             <td>{{ $system->Number_hours_for_charge }}</td>
+                                            <td>{{ $system->price_number }}</td>
+                                            <td>{{ $system->price_write }}</td>
                                             <td>{{ $system->details }}</td>
                                             <td>{{$system->deleted_at}}</td>
 

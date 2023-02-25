@@ -46,6 +46,21 @@
                                             style="margin-right: 8px; color:green">{{ $details->Number_hours_for_charge }}</span>
                                     </span>
                                     <br>
+                                    <span>
+                                          السعر رقما:<span
+                                            style="margin-right: 8px; color:green">{{ $details->price_number }}</span>
+                                    </span>
+                                    <br>
+                                    <span>
+                                          السعر كتابة:<span
+                                            style="margin-right: 8px; color:green">{{ $details->price_write }}</span>
+                                    </span>
+                                    <br>
+                                    <span>
+                                          معلومات اخرى:<span
+                                            style="margin-right: 8px; color:green">{{ $details->details }}</span>
+                                    </span>
+                                    <br>
                                     <pre style="text-align: center; color:blue">-----------------------</pre>
                                 </div>
                             @endforeach
@@ -85,6 +100,26 @@
                                     <span>
                                         يتم الشحن خلال:<span
                                             style="margin-right: 8px; color:green">{{ $details->Number_hours_for_charge }}</span>
+                                    </span>
+                                    <br>
+                                    <span>
+                                        يتم الشحن خلال:<span
+                                            style="margin-right: 8px; color:green">{{ $details->Number_hours_for_charge }}</span>
+                                    </span>
+                                    <br>
+                                    <span>
+                                          السعر رقما:<span
+                                            style="margin-right: 8px; color:green">{{ $details->price_number }}</span>
+                                    </span>
+                                    <br>
+                                    <span>
+                                          السعر كتابة:<span
+                                            style="margin-right: 8px; color:green">{{ $details->price_write }}</span>
+                                    </span>
+                                    <br>
+                                    <span>
+                                          معلومات اخرى:<span
+                                            style="margin-right: 8px; color:green">{{ $details->details }}</span>
                                     </span>
                                     <br>
                                     <pre style="text-align: center; color:blue">-----------------------</pre>
@@ -129,6 +164,26 @@
                                             style="margin-right: 8px; color:green">{{ $details->Number_hours_for_charge }}</span>
                                     </span>
                                     <br>
+                                    <span>
+                                        يتم الشحن خلال:<span
+                                            style="margin-right: 8px; color:green">{{ $details->Number_hours_for_charge }}</span>
+                                    </span>
+                                    <br>
+                                    <span>
+                                          السعر رقما:<span
+                                            style="margin-right: 8px; color:green">{{ $details->price_number }}</span>
+                                    </span>
+                                    <br>
+                                    <span>
+                                          السعر كتابة:<span
+                                            style="margin-right: 8px; color:green">{{ $details->price_write }}</span>
+                                    </span>
+                                    <br>
+                                    <span>
+                                          معلومات اخرى:<span
+                                            style="margin-right: 8px; color:green">{{ $details->details }}</span>
+                                    </span>
+                                    <br>
                                     <pre style="text-align: center; color:blue">-----------------------</pre>
                                 </div>
                             @endforeach
@@ -169,6 +224,26 @@
                                     <span>
                                         يتم الشحن خلال:<span
                                             style="margin-right: 8px; color:green">{{ $details->Number_hours_for_charge }}</span>
+                                    </span>
+                                    <br>
+                                    <span>
+                                        يتم الشحن خلال:<span
+                                            style="margin-right: 8px; color:green">{{ $details->Number_hours_for_charge }}</span>
+                                    </span>
+                                    <br>
+                                    <span>
+                                          السعر رقما:<span
+                                            style="margin-right: 8px; color:green">{{ $details->price_number }}</span>
+                                    </span>
+                                    <br>
+                                    <span>
+                                          السعر كتابة:<span
+                                            style="margin-right: 8px; color:green">{{ $details->price_write }}</span>
+                                    </span>
+                                    <br>
+                                    <span>
+                                          معلومات اخرى:<span
+                                            style="margin-right: 8px; color:green">{{ $details->details }}</span>
                                     </span>
                                     <br>
                                     <pre style="text-align: center; color:blue">-----------------------</pre>
@@ -213,6 +288,26 @@
                                             style="margin-right: 8px; color:green">{{ $details->Number_hours_for_charge }}</span>
                                     </span>
                                     <br>
+                                    <span>
+                                        يتم الشحن خلال:<span
+                                            style="margin-right: 8px; color:green">{{ $details->Number_hours_for_charge }}</span>
+                                    </span>
+                                    <br>
+                                    <span>
+                                          السعر رقما:<span
+                                            style="margin-right: 8px; color:green">{{ $details->price_number }}</span>
+                                    </span>
+                                    <br>
+                                    <span>
+                                          السعر كتابة:<span
+                                            style="margin-right: 8px; color:green">{{ $details->price_write }}</span>
+                                    </span>
+                                    <br>
+                                    <span>
+                                          معلومات اخرى:<span
+                                            style="margin-right: 8px; color:green">{{ $details->details }}</span>
+                                    </span>
+                                    <br>
                                     <pre style="text-align: center; color:blue">-----------------------</pre>
                                 </div>
                             @endforeach
@@ -253,6 +348,26 @@
                                     <span>
                                         يتم الشحن خلال:<span
                                             style="margin-right: 8px; color:green">{{ $details->Number_hours_for_charge }}</span>
+                                    </span>
+                                    <br>
+                                    <span>
+                                        يتم الشحن خلال:<span
+                                            style="margin-right: 8px; color:green">{{ $details->Number_hours_for_charge }}</span>
+                                    </span>
+                                    <br>
+                                    <span>
+                                          السعر رقما:<span
+                                            style="margin-right: 8px; color:green">{{ $details->price_number }}</span>
+                                    </span>
+                                    <br>
+                                    <span>
+                                          السعر كتابة:<span
+                                            style="margin-right: 8px; color:green">{{ $details->price_write }}</span>
+                                    </span>
+                                    <br>
+                                    <span>
+                                          معلومات اخرى:<span
+                                            style="margin-right: 8px; color:green">{{ $details->details }}</span>
                                     </span>
                                     <br>
                                     <pre style="text-align: center; color:blue">-----------------------</pre>
@@ -297,6 +412,26 @@
                                             style="margin-right: 8px; color:green">{{ $details->Number_hours_for_charge }}</span>
                                     </span>
                                     <br>
+                                    <span>
+                                        يتم الشحن خلال:<span
+                                            style="margin-right: 8px; color:green">{{ $details->Number_hours_for_charge }}</span>
+                                    </span>
+                                    <br>
+                                    <span>
+                                          السعر رقما:<span
+                                            style="margin-right: 8px; color:green">{{ $details->price_number }}</span>
+                                    </span>
+                                    <br>
+                                    <span>
+                                          السعر كتابة:<span
+                                            style="margin-right: 8px; color:green">{{ $details->price_write }}</span>
+                                    </span>
+                                    <br>
+                                    <span>
+                                          معلومات اخرى:<span
+                                            style="margin-right: 8px; color:green">{{ $details->details }}</span>
+                                    </span>
+                                    <br>
                                     <pre style="text-align: center; color:blue">-----------------------</pre>
                                 </div>
                             @endforeach
@@ -337,6 +472,26 @@
                                     <span>
                                         يتم الشحن خلال:<span
                                             style="margin-right: 8px; color:green">{{ $details->Number_hours_for_charge }}</span>
+                                    </span>
+                                    <br>
+                                    <span>
+                                        يتم الشحن خلال:<span
+                                            style="margin-right: 8px; color:green">{{ $details->Number_hours_for_charge }}</span>
+                                    </span>
+                                    <br>
+                                    <span>
+                                          السعر رقما:<span
+                                            style="margin-right: 8px; color:green">{{ $details->price_number }}</span>
+                                    </span>
+                                    <br>
+                                    <span>
+                                          السعر كتابة:<span
+                                            style="margin-right: 8px; color:green">{{ $details->price_write }}</span>
+                                    </span>
+                                    <br>
+                                    <span>
+                                          معلومات اخرى:<span
+                                            style="margin-right: 8px; color:green">{{ $details->details }}</span>
                                     </span>
                                     <br>
                                     <pre style="text-align: center; color:blue">-----------------------</pre>
@@ -381,6 +536,26 @@
                                             style="margin-right: 8px; color:green">{{ $details->Number_hours_for_charge }}</span>
                                     </span>
                                     <br>
+                                    <span>
+                                        يتم الشحن خلال:<span
+                                            style="margin-right: 8px; color:green">{{ $details->Number_hours_for_charge }}</span>
+                                    </span>
+                                    <br>
+                                    <span>
+                                          السعر رقما:<span
+                                            style="margin-right: 8px; color:green">{{ $details->price_number }}</span>
+                                    </span>
+                                    <br>
+                                    <span>
+                                          السعر كتابة:<span
+                                            style="margin-right: 8px; color:green">{{ $details->price_write }}</span>
+                                    </span>
+                                    <br>
+                                    <span>
+                                          معلومات اخرى:<span
+                                            style="margin-right: 8px; color:green">{{ $details->details }}</span>
+                                    </span>
+                                    <br>
                                     <pre style="text-align: center; color:blue">-----------------------</pre>
                                 </div>
                             @endforeach
@@ -421,6 +596,26 @@
                                     <span>
                                         يتم الشحن خلال:<span
                                             style="margin-right: 8px; color:green">{{ $details->Number_hours_for_charge }}</span>
+                                    </span>
+                                    <br>
+                                    <span>
+                                        يتم الشحن خلال:<span
+                                            style="margin-right: 8px; color:green">{{ $details->Number_hours_for_charge }}</span>
+                                    </span>
+                                    <br>
+                                    <span>
+                                          السعر رقما:<span
+                                            style="margin-right: 8px; color:green">{{ $details->price_number }}</span>
+                                    </span>
+                                    <br>
+                                    <span>
+                                          السعر كتابة:<span
+                                            style="margin-right: 8px; color:green">{{ $details->price_write }}</span>
+                                    </span>
+                                    <br>
+                                    <span>
+                                          معلومات اخرى:<span
+                                            style="margin-right: 8px; color:green">{{ $details->details }}</span>
                                     </span>
                                     <br>
                                     <pre style="text-align: center; color:blue">-----------------------</pre>
@@ -465,6 +660,26 @@
                                             style="margin-right: 8px; color:green">{{ $details->Number_hours_for_charge }}</span>
                                     </span>
                                     <br>
+                                    <span>
+                                        يتم الشحن خلال:<span
+                                            style="margin-right: 8px; color:green">{{ $details->Number_hours_for_charge }}</span>
+                                    </span>
+                                    <br>
+                                    <span>
+                                          السعر رقما:<span
+                                            style="margin-right: 8px; color:green">{{ $details->price_number }}</span>
+                                    </span>
+                                    <br>
+                                    <span>
+                                          السعر كتابة:<span
+                                            style="margin-right: 8px; color:green">{{ $details->price_write }}</span>
+                                    </span>
+                                    <br>
+                                    <span>
+                                          معلومات اخرى:<span
+                                            style="margin-right: 8px; color:green">{{ $details->details }}</span>
+                                    </span>
+                                    <br>
                                     <pre style="text-align: center; color:blue">-----------------------</pre>
                                 </div>
                             @endforeach
@@ -505,6 +720,26 @@
                                     <span>
                                         يتم الشحن خلال:<span
                                             style="margin-right: 8px; color:green">{{ $details->Number_hours_for_charge }}</span>
+                                    </span>
+                                    <br>
+                                    <span>
+                                        يتم الشحن خلال:<span
+                                            style="margin-right: 8px; color:green">{{ $details->Number_hours_for_charge }}</span>
+                                    </span>
+                                    <br>
+                                    <span>
+                                          السعر رقما:<span
+                                            style="margin-right: 8px; color:green">{{ $details->price_number }}</span>
+                                    </span>
+                                    <br>
+                                    <span>
+                                          السعر كتابة:<span
+                                            style="margin-right: 8px; color:green">{{ $details->price_write }}</span>
+                                    </span>
+                                    <br>
+                                    <span>
+                                          معلومات اخرى:<span
+                                            style="margin-right: 8px; color:green">{{ $details->details }}</span>
                                     </span>
                                     <br>
                                     <pre style="text-align: center; color:blue">-----------------------</pre>
@@ -549,6 +784,26 @@
                                             style="margin-right: 8px; color:green">{{ $details->Number_hours_for_charge }}</span>
                                     </span>
                                     <br>
+                                    <span>
+                                        يتم الشحن خلال:<span
+                                            style="margin-right: 8px; color:green">{{ $details->Number_hours_for_charge }}</span>
+                                    </span>
+                                    <br>
+                                    <span>
+                                          السعر رقما:<span
+                                            style="margin-right: 8px; color:green">{{ $details->price_number }}</span>
+                                    </span>
+                                    <br>
+                                    <span>
+                                          السعر كتابة:<span
+                                            style="margin-right: 8px; color:green">{{ $details->price_write }}</span>
+                                    </span>
+                                    <br>
+                                    <span>
+                                          معلومات اخرى:<span
+                                            style="margin-right: 8px; color:green">{{ $details->details }}</span>
+                                    </span>
+                                    <br>
                                     <pre style="text-align: center; color:blue">-----------------------</pre>
                                 </div>
                             @endforeach
@@ -589,6 +844,26 @@
                                     <span>
                                         يتم الشحن خلال:<span
                                             style="margin-right: 8px; color:green">{{ $details->Number_hours_for_charge }}</span>
+                                    </span>
+                                    <br>
+                                    <span>
+                                        يتم الشحن خلال:<span
+                                            style="margin-right: 8px; color:green">{{ $details->Number_hours_for_charge }}</span>
+                                    </span>
+                                    <br>
+                                    <span>
+                                          السعر رقما:<span
+                                            style="margin-right: 8px; color:green">{{ $details->price_number }}</span>
+                                    </span>
+                                    <br>
+                                    <span>
+                                          السعر كتابة:<span
+                                            style="margin-right: 8px; color:green">{{ $details->price_write }}</span>
+                                    </span>
+                                    <br>
+                                    <span>
+                                          معلومات اخرى:<span
+                                            style="margin-right: 8px; color:green">{{ $details->details }}</span>
                                     </span>
                                     <br>
                                     <pre style="text-align: center; color:blue">-----------------------</pre>
@@ -634,6 +909,26 @@
                                             style="margin-right: 8px; color:green">{{ $details->Number_hours_for_charge }}</span>
                                     </span>
                                     <br>
+                                    <span>
+                                        يتم الشحن خلال:<span
+                                            style="margin-right: 8px; color:green">{{ $details->Number_hours_for_charge }}</span>
+                                    </span>
+                                    <br>
+                                    <span>
+                                          السعر رقما:<span
+                                            style="margin-right: 8px; color:green">{{ $details->price_number }}</span>
+                                    </span>
+                                    <br>
+                                    <span>
+                                          السعر كتابة:<span
+                                            style="margin-right: 8px; color:green">{{ $details->price_write }}</span>
+                                    </span>
+                                    <br>
+                                    <span>
+                                          معلومات اخرى:<span
+                                            style="margin-right: 8px; color:green">{{ $details->details }}</span>
+                                    </span>
+                                    <br>
                                     <pre style="text-align: center; color:blue">-----------------------</pre>
                                 </div>
                             @endforeach
@@ -676,6 +971,26 @@
                                             style="margin-right: 8px; color:green">{{ $details->Number_hours_for_charge }}</span>
                                     </span>
                                     <br>
+                                    <span>
+                                        يتم الشحن خلال:<span
+                                            style="margin-right: 8px; color:green">{{ $details->Number_hours_for_charge }}</span>
+                                    </span>
+                                    <br>
+                                    <span>
+                                          السعر رقما:<span
+                                            style="margin-right: 8px; color:green">{{ $details->price_number }}</span>
+                                    </span>
+                                    <br>
+                                    <span>
+                                          السعر كتابة:<span
+                                            style="margin-right: 8px; color:green">{{ $details->price_write }}</span>
+                                    </span>
+                                    <br>
+                                    <span>
+                                          معلومات اخرى:<span
+                                            style="margin-right: 8px; color:green">{{ $details->details }}</span>
+                                    </span>
+                                    <br>
                                     <pre style="text-align: center; color:blue">-----------------------</pre>
                                 </div>
                             @endforeach
@@ -684,6 +999,20 @@
 
                     </div>
                 </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title ">مشاركة المعلومات:</h5>
+                    <div>
+                        <span>
+                            اذا اردت ان يصلك كل جديد شاركنا معلوماتك
+                        </span>
+                    </div>
+                    <div class="col-12 d-flex justify-content-center">
+                      
+                        <a class="btn btn-primary" type="button" href="{{route('show.user.details')}}"> مشاركة <i class="bi bi-share-fill"></i></a>
+                    </div>
+                </div>
+            </div>
             </div>
         </div>
     </section>

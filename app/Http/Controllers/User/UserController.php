@@ -6,7 +6,9 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\LoadsRequest;
 use App\Models\Loads;
 use App\Models\System;
+use App\Models\User_Information;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Validator as FacadesValidator;
 
 class UserController extends Controller
@@ -29,15 +31,18 @@ class UserController extends Controller
     {
 
         try {
+
             $selected = $request->input('selected');
             $values = $request->input('value');
+            $number = $request->input('number');
             $sum = 0;
 
             foreach ($selected as $id => $isSelected) {
                 if ($isSelected) {
-                    $sum += $values[$id];
+                    $sum += $values[$id] * $number[$id];
                 }
             }
+
             return view('User/Time', compact('sum'));
         } catch (\Exception $ex) {
             return redirect()->back()->with('error_message', 'خطا ما الرجاءاعادة المحاولة');
@@ -237,6 +242,50 @@ class UserController extends Controller
         } catch (\Exception) {
 
             return redirect()->route('notfound');
+        }
+    }
+
+    //عرض صفحة ادخال بيانات المستخدم
+
+    public function show_user_details()
+    {
+        try {
+
+            return view('User/user_details');
+        } catch (\Exception $ex) {
+            return redirect()->route('notfound');
+        }
+    }
+
+    //تخزين معلومات المستخدم
+
+    public function store_user_details(Request $request)
+    {
+
+        try {
+
+            $validator = Validator::make($request->all(), [
+                'name' => 'required',
+                'phone' => 'required',
+                'note' => 'required|max:10',
+            ]);
+
+            if ($validator->fails()) {
+                return redirect('User/user_details')
+                    ->withErrors($validator)
+                    ->withInput();
+            }
+
+            User_Information::create([
+                'name' => $request->name,
+                'email' => $request->email,
+                'phone' => $request->phone,
+                'address' => $request->address,
+                'note' => $request->note,
+            ]);
+            return redirect()->route('show.load')->with('store_success_message', 'شكرا لك على اختيار شركة الحضارة');;
+        } catch (\Exception $ex) {
+            return redirect()->with('store_error_message', 'خطأ ما الرجاء التأكد من صحة البيانات');
         }
     }
 

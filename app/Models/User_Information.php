@@ -6,14 +6,15 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Loads extends Model
+class User_Information extends Model
 {
     use HasFactory,SoftDeletes;
 
     protected $fillable = [
         'name',
-        'value',
-        'number',
+        'email',
+        'phone',
+        'address',
+        'note',
     ];
-
 }

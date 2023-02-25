@@ -22,6 +22,8 @@ class SystemSeeder extends Seeder
             'watt_battery' => '5000',
             'watt_inverters' => '3500',
             'Number_hours_for_charge' => 'ساعة واربعون دقيقة',
+            'price_number' => '20000000',
+            'price_write' => 'عشرون مليون ليرة سورية',
             'details'=> 'لا يوجد',
         ]);
 
@@ -32,6 +34,8 @@ class SystemSeeder extends Seeder
             'watt_battery' => '5000',
             'watt_inverters' => '5000',
             'Number_hours_for_charge' => 'ساعة وعشرون دقيقة',
+            'price_number' => '20000000',
+            'price_write' => 'عشرون مليون ليرة سورية',
             'details'=> 'لا يوجد',
         ]);
 
@@ -42,6 +46,8 @@ class SystemSeeder extends Seeder
             'watt_battery' => '5000',
             'watt_inverters' => '5000',
             'Number_hours_for_charge' => 'ساعتان وثلاثون دقيقة',
+            'price_number' => '20000000',
+            'price_write' => 'عشرون مليون ليرة سورية',
             'details'=> 'لا يوجد',
         ]);
 
@@ -52,6 +58,8 @@ class SystemSeeder extends Seeder
             'watt_battery' => '5000',
             'watt_inverters' => '5000',
             'Number_hours_for_charge' => 'ساعتان وثلاثون دقيقة',
+            'price_number' => '20000000',
+            'price_write' => 'عشرون مليون ليرة سورية',
             'details'=> 'لا يوجد',
         ]);
     }
