@@ -71,9 +71,7 @@ Route::middleware(['auth', 'verified'])->prefix('admin')->group(function () {
      Route::get('/userinformation/restore/{id}', [User_InformationController::class, 'restore'])->name('admin.restore.user.information')->middleware(['permission:استعادة معلومات زبون']);
      Route::delete('/userinformation/force/delete/{id}', [User_InformationController::class, 'force_delete'])->name('admin.forcedelete.user.information')->middleware(['permission:حذف معلومات زبون بشكل نهائي']);
 
-     //<========== profile route section ============>
-
-     Route::put('/profile/update/{user}', [AdminController::class , 'admin_profile_update'])->name('admin.profile.update');
+    
     
 
 });
@@ -131,8 +129,9 @@ Route::get('/user/details/system/six/three', [UserController::class, 'six_possib
 
 Route::middleware(['auth', 'permission:تعديل الملف الشخصي'])->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::put('/profile/update/{user}', [AdminController::class , 'admin_profile_update'])->name('admin.profile.update');
+    // Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    // Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
 require __DIR__ . '/auth.php';
