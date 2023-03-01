@@ -4,6 +4,7 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\LoadsRequest;
+use App\Models\Complaints;
 use App\Models\Loads;
 use App\Models\System;
 use App\Models\User_Information;
@@ -284,6 +285,51 @@ class UserController extends Controller
                 'note' => $request->note,
             ]);
             return redirect()->route('show.load')->with('store_success_message', 'شكرا لك على اختيار شركة الحضارة');;
+        } catch (\Exception $ex) {
+            return redirect()->with('store_error_message', 'خطأ ما الرجاء التأكد من صحة البيانات');
+        }
+    }
+
+    //عرض صفحة تواصل معنا 
+
+    public function Show_contact_us()
+    {
+        try {
+
+            return view('User/contact_us');
+        } catch (\Exception $ex) {
+            return redirect()->route('notfound');
+        }
+    }
+
+    //تخزين الرسالة من صفحة تواصل معنا
+
+    public function Store_contact_us(Request $request)
+    {
+
+        try {
+
+
+            $validator = Validator::make($request->all(), [
+                'name' => 'required',
+                'email' => 'required',
+                'subject' => 'required',
+                'message' => 'required',
+            ]);
+
+            if ($validator->fails()) {
+                return redirect('User/contact_us')
+                    ->withErrors($validator)
+                    ->withInput();
+            }
+
+            Complaints::create([
+                'name' => $request->name,
+                'email' => $request->email,
+                'subject' => $request->subject,
+                'message' => $request->message,
+            ]);
+            return redirect()->route('user.contactus')->with('store_success_message', 'تم ارسال الرسالة بنجاح');
         } catch (\Exception $ex) {
             return redirect()->with('store_error_message', 'خطأ ما الرجاء التأكد من صحة البيانات');
         }

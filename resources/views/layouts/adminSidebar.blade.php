@@ -138,7 +138,15 @@
                             <span>اعادة تعين كلمة المرور</span>
                         </a>
                     </li>
+
+                    
                 </ul>
+                <li class="nav-item">
+                    <a class="nav-link collapsed" href="{{route('admin.show.complaints')}}">
+                     <i class="bi bi-exclamation-octagon"></i>
+                      <span>الشكاوي</span>
+                    </a>
+                  </li>
             </li>
         </ul>
     </aside>

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\Administrators\AdministratorController;
+use App\Http\Controllers\Admin\Complaints\ComplaintsController;
 use App\Http\Controllers\Admin\Loads\LoadsController;
 use App\Http\Controllers\Admin\Systems\SystemController;
 use App\Http\Controllers\Admin\User_Information\User_InformationController;
@@ -64,16 +65,17 @@ Route::middleware(['auth', 'verified'])->prefix('admin')->group(function () {
     Route::post('/administrators/{administrators}/permissions', [AdministratorController::class, 'givepermission'])->name('admin.permissions.giv.administrators')->middleware(['permission:اعطاء صلاحية']);
     Route::delete('/administrators/{administrators}/permissions/{permission}', [AdministratorController::class, 'revokepermission'])->name('admin.permissions.revoke.administrators')->middleware(['permission:سحب صلاحية']);
 
-     //<========== user_information route section ============>
-     Route::get('/userinformation/show', [User_InformationController::class, 'index'])->name('admin.show.user.information')->middleware(['permission:استعراض معلومات الزبائن']);
-     Route::delete('/userinformation/destroy/{user_Information}', [User_InformationController::class, 'destroy'])->name('admin.softdelete.user.information')->middleware(['permission:حذف معلومات الزبائن']);
-     Route::get('/userinformation/Archive', [User_InformationController::class, 'Archive'])->name('admin.archive.user.information')->middleware(['permission:ارشيف معلومات الزبائن']);
-     Route::get('/userinformation/restore/{id}', [User_InformationController::class, 'restore'])->name('admin.restore.user.information')->middleware(['permission:استعادة معلومات زبون']);
-     Route::delete('/userinformation/force/delete/{id}', [User_InformationController::class, 'force_delete'])->name('admin.forcedelete.user.information')->middleware(['permission:حذف معلومات زبون بشكل نهائي']);
+    //<========== user_information route section ============>
+    Route::get('/userinformation/show', [User_InformationController::class, 'index'])->name('admin.show.user.information')->middleware(['permission:استعراض معلومات الزبائن']);
+    Route::delete('/userinformation/destroy/{user_Information}', [User_InformationController::class, 'destroy'])->name('admin.softdelete.user.information')->middleware(['permission:حذف معلومات الزبائن']);
+    Route::get('/userinformation/Archive', [User_InformationController::class, 'Archive'])->name('admin.archive.user.information')->middleware(['permission:ارشيف معلومات الزبائن']);
+    Route::get('/userinformation/restore/{id}', [User_InformationController::class, 'restore'])->name('admin.restore.user.information')->middleware(['permission:استعادة معلومات زبون']);
+    Route::delete('/userinformation/force/delete/{id}', [User_InformationController::class, 'force_delete'])->name('admin.forcedelete.user.information')->middleware(['permission:حذف معلومات زبون بشكل نهائي']);
 
-    
-    
 
+    //<========== complaints route section ============>
+    Route::get('/complaints/show', [ComplaintsController::class, 'index'])->name('admin.show.complaints');
+    Route::delete('/complaints/delete/{complaints}', [ComplaintsController::class, 'destroy'])->name('admin.destroy.complaints');
 });
 //<================== end admin section ============>
 
@@ -95,9 +97,11 @@ Route::get('/user/update/time', [UserController::class, 'update_time'])->name('u
 Route::get('/user/show/possibilities', [UserController::class, 'show_page_possibilities'])->name('show.page.possibilities');
 Route::get('/user/show/TableSystem', [UserController::class, 'show_page_table_system'])->name('show.page.table.system');
 Route::get('/user/possibilities', [UserController::class, 'show_possibilities'])->name('show.possibilities');
-Route::get('/user/details/create', [UserController::class , 'show_user_details'])->name('show.user.details');
-Route::post('/user/details/store', [UserController::class , 'store_user_details'])->name('store.user.details');
+Route::get('/user/details/create', [UserController::class, 'show_user_details'])->name('show.user.details');
+Route::post('/user/details/store', [UserController::class, 'store_user_details'])->name('store.user.details');
 
+Route::get('/user/contact_us', [UserController::class, 'Show_contact_us'])->name('user.contactus');
+Route::post('/user/contact_us/store', [UserController::class, 'Store_contact_us'])->name('store.contactus');
 
 
 Route::get('/user/details/system', [UserController::class, 'show_page_details_system'])->name('show.page.details.system');
@@ -129,7 +133,7 @@ Route::get('/user/details/system/six/three', [UserController::class, 'six_possib
 
 Route::middleware(['auth', 'permission:تعديل الملف الشخصي'])->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::put('/profile/update/{user}', [AdminController::class , 'admin_profile_update'])->name('admin.profile.update');
+    Route::put('/profile/update/{user}', [AdminController::class, 'admin_profile_update'])->name('admin.profile.update');
     // Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     // Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
