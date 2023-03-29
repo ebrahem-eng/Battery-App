@@ -30,6 +30,47 @@
                             </button>
                         </div>
                     @endif
+
+
+                    @if (session('error_null_number_message'))
+                    <div class="alert alert-danger alert-dismissible bg-danger text-white border-0 fade show"
+                        id="success-alert" role="alert">
+                        {{ session('error_null_number_message') }}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                @endif
+
+                @if (session('error_minus_number_message'))
+                    <div class="alert alert-danger alert-dismissible bg-danger text-white border-0 fade show"
+                        id="success-alert" role="alert">
+                        {{ session('error_minus_number_message') }}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                @endif
+
+                @if (session('error_message'))
+                    <div class="alert alert-danger alert-dismissible bg-danger text-white border-0 fade show"
+                        id="success-alert" role="alert">
+                        {{ session('error_message') }}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                @endif
+
+                @if (session('error_max_watt_message'))
+                    <div class="alert alert-danger alert-dismissible bg-danger text-white border-0 fade show"
+                        id="success-alert" role="alert">
+                        {{ session('error_max_watt_message') }}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                @endif
                     <!-- end error message -->
 
                     <div class="card-body">
@@ -56,11 +97,25 @@
                                                 min="20" max="3000">
                                         </div>
                                         <div class="col-3 col-md-2">
+                                            
                                             <input style="direction: rtl" type="number" class="form-control"
                                                 name="number[{{ $load->id }}]" value="{{ $load->number }}"
                                                 max="10" min="1">
+                                               
+                                        </div>
+
+                                        
+                                    </div>
+                                    <div class="row">
+                                        <label class="form-label">عدد ساعات التشغيل</label>
+                                        <div class="col-3 col-md-2">
+                                            
+                                            <input style="direction: rtl" type="number" class="form-control"
+                                                name="houre[{{ $load->id }}]" value="{{ $load->houre }}"
+                                                max="8" min="1">
                                         </div>
                                     </div>
+                                   
                                     <br>
                             @endforeach
                             <div class="col-12 d-flex justify-content-center">

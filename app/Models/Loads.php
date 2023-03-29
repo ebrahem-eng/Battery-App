@@ -14,6 +14,7 @@ class Loads extends Model
         'name',
         'value',
         'number',
+        'houre',
     ];
 
 }

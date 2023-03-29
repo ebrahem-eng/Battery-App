@@ -60,7 +60,7 @@
                                             <label class="form-label">مجموع الاحمال:</label>
                                             <input style="direction: rtl" type="number" class="form-control"
                                                 id="nametext" aria-describedby="name" name="total-watt" required
-                                                value="{{ $sum }}" readonly>
+                                                value="{{$sum}}" readonly>
                                         </div>
                                     </div>
                                 </div>

@@ -87,7 +87,7 @@ Route::get('/notfound', function () {
     return view('pages-error-404');
 })->name('notfound');
 Route::get('/user/calculate/watt/sum', [UserController::class, 'Calculate_Sum_Watting'])->name('calculate.watt');
-Route::get('/user/calculate/watt/time', [UserController::class, 'Calculate_watt_time'])->name('calculate.watt.time');
+// Route::get('/user/calculate/watt/time', [UserController::class, 'Calculate_watt_time'])->name('calculate.watt.time');
 Route::get('/user/calculate/watt/time/warning', [UserController::class, 'Calculate_watt_time_warning'])->name('calculate.watt.time.warning');
 Route::get('/user/calculate/watt/time/continu', [UserController::class, 'Calculate_watt_time_continu'])->name('calculate.watt.time.continu');
 Route::get('/user/calculate/watt/time/edit', [UserController::class, 'Calculate_watt_time_edit'])->name('calculate.watt.time.edit');

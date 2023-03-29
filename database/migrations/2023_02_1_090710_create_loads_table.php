@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('name')->unique()->index();
             $table->integer('value');
             $table->integer('number');
+            $table->integer('houre');
             $table->softDeletes();
             $table->timestamps();
         });

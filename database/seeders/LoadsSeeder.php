@@ -19,6 +19,7 @@ class LoadsSeeder extends Seeder
             'name' => 'ثلاجة 16 قدم',
             'value' => '200',
             'number' => '1',
+            'houre' => '1',
         ]);
 
 
@@ -27,6 +28,7 @@ class LoadsSeeder extends Seeder
             'name' => 'ثلاجة 20 قدم',
             'value' => '300',
             'number' => '1',
+            'houre' => '1',
         ]);
 
 
@@ -34,6 +36,7 @@ class LoadsSeeder extends Seeder
             'name' => 'غسالة الملابس الاتوماتيك بدون حرارة',
             'value' => '500',
             'number' => '1',
+            'houre' => '1',
         ]);
 
 
@@ -41,6 +44,7 @@ class LoadsSeeder extends Seeder
             'name' => 'الغسالة اليدوية بدون حرارة',
             'value' => '300',
             'number' => '1',
+            'houre' => '1',
         ]);
 
 
@@ -49,6 +53,7 @@ class LoadsSeeder extends Seeder
             'name' => 'غسالة الأطباق',
             'value' => '1300',
             'number' => '1',
+            'houre' => '1',
         ]);
 
 
@@ -57,6 +62,7 @@ class LoadsSeeder extends Seeder
             'name' => 'الفرن الكهربائي',
             'value' => '1700',
             'number' => '1',
+            'houre' => '1',
         ]);
 
 
@@ -64,6 +70,7 @@ class LoadsSeeder extends Seeder
             'name' => 'الكولر',
             'value' => '300',
             'number' => '1',
+            'houre' => '1',
         ]);
 
 
@@ -71,6 +78,7 @@ class LoadsSeeder extends Seeder
             'name' => 'المكرويف',
             'value' => '800',
             'number' => '1',
+            'houre' => '1',
         ]);
 
 
@@ -78,6 +86,7 @@ class LoadsSeeder extends Seeder
             'name' => 'الخلاط',
             'value' => '500',
             'number' => '1',
+            'houre' => '1',
         ]);
 
 
@@ -85,6 +94,7 @@ class LoadsSeeder extends Seeder
             'name' => 'غلاية المياه',
             'value' => '1500',
             'number' => '1',
+            'houre' => '1',
         ]);
 
 
@@ -92,6 +102,7 @@ class LoadsSeeder extends Seeder
             'name' => 'العجانة الكهربائية ',
             'value' => '300',
             'number' => '1',
+            'houre' => '1',
         ]);
 
 
@@ -99,6 +110,7 @@ class LoadsSeeder extends Seeder
             'name' => 'القلاية الكهربائية',
             'value' => '1500',
             'number' => '1',
+            'houre' => '1',
         ]);
 
 
@@ -106,6 +118,7 @@ class LoadsSeeder extends Seeder
             'name' => 'التوستر',
             'value' => '850',
             'number' => '1',
+            'houre' => '1',
         ]);
 
 
@@ -113,6 +126,7 @@ class LoadsSeeder extends Seeder
             'name' => ' شاشة LCD ',
             'value' => '150',
             'number' => '1',
+            'houre' => '1',
         ]);
 
 
@@ -120,6 +134,7 @@ class LoadsSeeder extends Seeder
             'name' => 'شاشة بلازما',
             'value' => '200',
             'number' => '1',
+            'houre' => '1',
         ]);
 
 
@@ -127,18 +142,21 @@ class LoadsSeeder extends Seeder
             'name' => 'شاشة LED',
             'value' => '100',
             'number' => '1',
+            'houre' => '1',
         ]);
 
         Loads::create([
             'name' => 'مروحة بوكس',
             'value' => '200',
             'number' => '1',
+            'houre' => '1',
         ]);
 
         Loads::create([
             'name' => 'مروحة سقف',
             'value' => '500',
             'number' => '1',
+            'houre' => '1',
         ]);
 
 
@@ -146,6 +164,7 @@ class LoadsSeeder extends Seeder
             'name' => 'مدفأة ',
             'value' => '1500',
             'number' => '1',
+            'houre' => '1',
         ]);
 
 
@@ -153,48 +172,56 @@ class LoadsSeeder extends Seeder
             'name' => 'سخان المياه',
             'value' => '2000',
             'number' => '1',
+            'houre' => '1',
         ]);
 
         Loads::create([
             'name' => 'مكواة',
             'value' => '1500',
             'number' => '1',
+            'houre' => '1',
         ]);
 
         Loads::create([
             'name' => 'مجفف الشعر (السيشوار)',
             'value' => '1500',
             'number' => '1',
+            'houre' => '1',
         ]);
 
         Loads::create([
             'name' => 'مكيف 1 طن ',
             'value' => '1200',
             'number' => '1',
+            'houre' => '1',
         ]);
 
         Loads::create([
             'name' => 'مكيف 2 طن',
             'value' => '3000',
             'number' => '1',
+            'houre' => '1',
         ]);
 
         Loads::create([
             'name' => 'الانارة',
             'value' => '200',
             'number' => '1',
+            'houre' => '1',
         ]);
 
         Loads::create([
             'name' => 'لابتوب',
             'value' => '50',
             'number' => '1',
+            'houre' => '1',
         ]);
 
         Loads::create([
             'name' => 'الكمبيوتر العادي',
             'value' => '500',
             'number' => '1',
+            'houre' => '1',
         ]);
     }
 }

@@ -34,17 +34,46 @@ class UserController extends Controller
         try {
 
             $selected = $request->input('selected');
-            $values = $request->input('value');
+            $value = $request->input('value');
             $number = $request->input('number');
-            $sum = 0;
+            $houre = $request->input('houre');
+            $watt_time = 0;
+            $sum_watt = 0;
+            $time = 0;
 
+
+            if ($houre == 0) {
+
+                return redirect()->back()->with("error_null_number_message", 'الرجاء ادخال رقم');
+            } elseif ($houre < 0) {
+                return redirect()->back()->with("error_minus_number_message", 'الرجاء ادخال رقم صحيح');
+            } else
+            {
+
+            
             foreach ($selected as $id => $isSelected) {
                 if ($isSelected) {
-                    $sum += $values[$id] * $number[$id];
+                    $time +=  $houre[$id];
+
+                    $sum_watt += $value[$id] * $number[$id];
+
+                    $watt_time += $value[$id] * $number[$id] * $houre[$id];
                 }
             }
 
-            return view('User/Time', compact('sum'));
+
+            if ($watt_time > 1500) {
+                return view('User/Warning', compact('watt_time', 'sum_watt', 'time'));
+            } else if ($watt_time > 24000) {
+
+                return redirect()->back()->with("error_max_watt_message", 'ان اقصى واط يمكن حسابه هو ٢٤٠٠٠ واط الرجاء التواصل معنا');
+            } else {
+                return view('User/All_load', compact('watt_time'));
+            }
+
+
+            return view('User/All_load', compact('watt_time'));
+        }
         } catch (\Exception $ex) {
             return redirect()->back()->with('error_message', 'خطا ما الرجاءاعادة المحاولة');
         }
@@ -53,34 +82,34 @@ class UserController extends Controller
 
     //حساب الحمل النهائي مع الوقت المقدر للتشغيل
 
-    public function Calculate_watt_time(Request $request)
-    {
-        try {
+    // public function Calculate_watt_time(Request $request)
+    // {
+    //     try {
 
-            $sum_watt = $request->input('total-watt');
-            $time = $request->input('time');
+    //         $sum_watt = $request->input('total-watt');
+    //         $time = $request->input('time');
 
-            if ($time == 0) {
+    //         if ($time == 0) {
 
-                return redirect()->back()->with("error_null_number_message", 'الرجاء ادخال رقم');
-            } elseif ($time < 0) {
-                return redirect()->back()->with("error_minus_number_message", 'الرجاء ادخال رقم صحيح');
-            } else {
-                $watt_time = $sum_watt * $time;
+    //             return redirect()->back()->with("error_null_number_message", 'الرجاء ادخال رقم');
+    //         } elseif ($time < 0) {
+    //             return redirect()->back()->with("error_minus_number_message", 'الرجاء ادخال رقم صحيح');
+    //         } else {
+    //             $watt_time = $sum_watt * $time;
 
-                if ($watt_time > 1500) {
-                    return view('User/Warning', compact('watt_time', 'sum_watt', 'time'));
-                } else if ($watt_time > 24000) {
+    //             if ($watt_time > 1500) {
+    //                 return view('User/Warning', compact('watt_time', 'sum_watt', 'time'));
+    //             } else if ($watt_time > 24000) {
 
-                    return redirect()->back()->with("error_max_watt_message", 'ان اقصى واط يمكن حسابه هو ٢٤٠٠٠ واط الرجاء التواصل معنا');
-                } else {
-                    return view('User/All_load', compact('watt_time'));
-                }
-            }
-        } catch (\Exception $ex) {
-            return redirect()->back()->with("error_message", 'خطا ما الرجاءاعادة المحاولة');
-        }
-    }
+    //                 return redirect()->back()->with("error_max_watt_message", 'ان اقصى واط يمكن حسابه هو ٢٤٠٠٠ واط الرجاء التواصل معنا');
+    //             } else {
+    //                 return view('User/All_load', compact('watt_time'));
+    //             }
+    //         }
+    //     } catch (\Exception $ex) {
+    //         return redirect()->back()->with("error_message", 'خطا ما الرجاءاعادة المحاولة');
+    //     }
+    // }
 
     //عرض صفحة التحذير
 
